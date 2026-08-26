@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FBFBF9; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #1B6E9B; text-decoration: none; }
+  a:hover { color: #2AA24A; }
+  summary::-webkit-details-marker { display: none; }
+  html { scroll-behavior: smooth; }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0B3B45"/><rect x="30" y="30" width="40" height="40" rx="6" fill="#7DC242"/><rect x="42" y="42" width="16" height="16" rx="3" fill="#0B3B45"/></svg></template>
+
+<div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #16211F; background: #FBFBF9; overflow-x: hidden">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); borderBottom: 1px solid #E7E9E5">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap">
+      <a href="#topo" style="display: flex; align-items: center; gap: 10px; flex-shrink: 0">
+        <img src="assets/mark.png" alt="Integral" style="height: 40px; width: auto; display: block" />
+        <img src="assets/wordmark.png" alt="Integral Engenharia e Soluções Ambientais" style="height: 30px; width: auto; display: block" />
+      </a>
+      <nav style="display: flex; flex-wrap: wrap; gap: 20px; margin-left: auto; font-size: 14.5px; font-weight: 500; color: #3D4A47">
+        <a href="#areas" style="color: #3D4A47" style-hover="color: #2AA24A">Áreas de atuação</a>
+        <a href="#servicos" style="color: #3D4A47" style-hover="color: #2AA24A">Serviços</a>
+        <a href="#processo" style="color: #3D4A47" style-hover="color: #2AA24A">Como funciona</a>
+        <a href="#equipe" style="color: #3D4A47" style-hover="color: #2AA24A">Equipe</a>
+        <a href="#contato" style="color: #3D4A47" style-hover="color: #2AA24A">Contato</a>
+      </nav>
+      <a href="https://wa.me/5584999007976" target="_blank" rel="noopener" style="background: #2AA24A; color: #fff; padding: 12px 20px; border-radius: 6px; font-weight: 600; font-size: 14.5px; white-space: nowrap; min-height: 44px; display: flex; align-items: center" style-hover="background: #23883E; color: #fff">Falar no WhatsApp</a>
+    </div>
+  </header>
+
+  <section id="topo" style="position: relative; background: #0B3B45; color: #fff; overflow: hidden">
+    <div style="position: absolute; inset: 0; background: repeating-linear-gradient(115deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 16px)"></div>
+    <div style="position: absolute; top: -180px; right: -140px; width: 620px; height: 620px; borderRadius: 50%; background: radial-gradient(circle at 35% 35%, rgba(125,194,66,0.28), rgba(27,110,155,0.16) 55%, transparent 72%)"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 96px 24px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(125,194,66,0.45); background: rgba(125,194,66,0.1); color: #B8E08A; padding: 7px 14px; border-radius: 100px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-family: 'IBM Plex Mono', monospace">
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #7DC242; display: block"></span>
+          Natal/RN · atendimento em todo o Brasil
+        </div>
+        <h1 style="font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(36px, 7vw, 60px); line-height: 1.05; letter-spacing: -0.028em; margin: 22px 0 0; text-wrap: balance">
+          Vamos regularizar<br />o seu empreendimento.
+        </h1>
+        <p style="font-size: clamp(17px, 2.2vw, 19.5px); line-height: 1.55; color: #C6D6D4; margin: 22px 0 0; max-width: 560px; text-wrap: pretty">
+          Licenciamento ambiental e projetos de engenharia conduzidos do início ao fim por uma equipe multidisciplinar — com acompanhamento diário do processo junto aos órgãos. Mais de <strong style="color: #fff; font-weight: 600">100 empreendimentos licenciados</strong> em 7 anos.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px">
+          <a href="https://wa.me/5584999007976?text=Ol%C3%A1%2C%20preciso%20regularizar%20meu%20empreendimento." target="_blank" rel="noopener" style="background: #7DC242; color: #0B3B45; padding: 17px 30px; border-radius: 7px; font-weight: 700; font-size: 16.5px; min-height: 44px; display: flex; align-items: center" style-hover="background: #8FD152; color: #0B3B45">Quero regularizar meu empreendimento</a>
+          <a href="#contato" style="border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 17px 28px; border-radius: 7px; font-weight: 600; font-size: 16.5px; min-height: 44px; display: flex; align-items: center" style-hover="border-color: #fff; color: #fff">Solicitar orçamento</a>
+        </div>
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #90A8A6; margin: 16px 0 0">Resposta em até 1 dia útil · Diagnóstico inicial sem custo</p>
+      </div>
+      <div style="position: relative">
+        <div style="aspect-ratio: 4/5; border-radius: 10px; border: 1px solid rgba(255,255,255,0.16); background: repeating-linear-gradient(135deg, rgba(255,255,255,0.07) 0 8px, rgba(255,255,255,0.02) 8px 18px); display: flex; align-items: flex-end; padding: 20px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #A9BFBD; line-height: 1.5">[ foto ] equipe em vistoria técnica<br />de campo — vertical, alta resolução</span>
+        </div>
+      </div>
+    </div>
+    <div style="position: relative; border-top: 1px solid rgba(255,255,255,0.11)">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 26px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 28px">
+        <div>
+          <div style="font-family: Archivo, sans-serif; font-size: 30px; font-weight: 700; color: #7DC242; letter-spacing: -0.02em">+100</div>
+          <div style="font-size: 14px; color: #A9BFBD; margin-top: 2px">empreendimentos licenciados</div>
+        </div>
+        <div>
+          <div style="font-family: Archivo, sans-serif; font-size: 30px; font-weight: 700; color: #7DC242; letter-spacing: -0.02em">7 anos</div>
+          <div style="font-size: 14px; color: #A9BFBD; margin-top: 2px">de atuação no Rio Grande do Norte</div>
+        </div>
+        <div>
+          <div style="font-family: Archivo, sans-serif; font-size: 30px; font-weight: 700; color: #7DC242; letter-spacing: -0.02em">8 áreas</div>
+          <div style="font-size: 14px; color: #A9BFBD; margin-top: 2px">técnicas na mesma equipe</div>
+        </div>
+        <div>
+          <div style="font-family: Archivo, sans-serif; font-size: 30px; font-weight: 700; color: #7DC242; letter-spacing: -0.02em">CREA</div>
+          <div style="font-size: 14px; color: #A9BFBD; margin-top: 2px">registro e ART em todos os projetos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 0">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 64px; align-items: start">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A">O problema</div>
+        <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 0; color: #0B3B45; text-wrap: balance">Processo parado no órgão ambiental custa caro todo mês.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #4A5754; margin: 20px 0 0; text-wrap: pretty">Enquanto a licença não sai, a obra não anda, o financiamento não libera e o risco de autuação continua no seu nome.</p>
+      </div>
+      <div style="display: grid; gap: 2px; background: #E7E9E5; border: 1px solid #E7E9E5; border-radius: 10px; overflow: hidden">
+        <div style="background: #fff; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start">
+          <span style="width: 8px; height: 8px; border-radius: 2px; background: #7DC242; margin-top: 8px; flex-shrink: 0"></span>
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.5; color: #26332F">Você já protocolou o processo e até hoje não sabe em que etapa ele está.</p>
+        </div>
+        <div style="background: #fff; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start">
+          <span style="width: 8px; height: 8px; border-radius: 2px; background: #7DC242; margin-top: 8px; flex-shrink: 0"></span>
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.5; color: #26332F">Recebeu uma exigência técnica do órgão e ninguém soube responder no prazo.</p>
+        </div>
+        <div style="background: #fff; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start">
+          <span style="width: 8px; height: 8px; border-radius: 2px; background: #7DC242; margin-top: 8px; flex-shrink: 0"></span>
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.5; color: #26332F">Precisou de cinco profissionais diferentes — e cada um culpou o outro pelo atraso.</p>
+        </div>
+        <div style="background: #fff; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start">
+          <span style="width: 8px; height: 8px; border-radius: 2px; background: #7DC242; margin-top: 8px; flex-shrink: 0"></span>
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.5; color: #26332F">A licença venceu sem aviso e a operação ficou irregular da noite pro dia.</p>
+        </div>
+        <div style="background: #fff; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start">
+          <span style="width: 8px; height: 8px; border-radius: 2px; background: #7DC242; margin-top: 8px; flex-shrink: 0"></span>
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.5; color: #26332F">A obra está pronta e o bombeiro não libera o AVCB por causa do projeto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 88px 24px 0">
+    <div style="background: #0B3B45; border-radius: 14px; padding: 56px 56px 52px; color: #fff; position: relative; overflow: hidden">
+      <div style="position: absolute; inset: 0; background: repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 16px)"></div>
+      <div style="position: relative; max-width: 780px">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #7DC242">A solução</div>
+        <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.122; letter-spacing: -0.025em; margin: 14px 0 0; text-wrap: balance">Uma equipe só, responsável pelo processo inteiro.</h2>
+        <p style="font-size: 18px; line-height: 1.6; color: #C6D6D4; margin: 20px 0 0; text-wrap: pretty">A Integral reúne engenheiros ambientais, sanitaristas, civil, florestal, de segurança do trabalho, biólogo, geólogo e arquiteto na mesma casa. Isso significa que o estudo de fauna, o projeto hidrossanitário, o laudo geomorfológico e o protocolo no órgão saem coordenados — não terceirizados em cinco escritórios que não conversam entre si.</p>
+        <p style="font-size: 18px; line-height: 1.6; color: #C6D6D4; margin: 16px 0 0; text-wrap: pretty">E o processo é acompanhado <strong style="color: #fff; font-weight: 600">diariamente</strong> junto ao órgão ambiental. Exigência que chega hoje é respondida no prazo — você recebe o retorno, não a surpresa.</p>
+      </div>
+      <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin-top: 42px">
+        <div style="border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; padding: 22px">
+          <div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 17px; color: #7DC242">Equipe multidisciplinar</div>
+          <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #A9BFBD">Um único contrato cobre todas as frentes técnicas do licenciamento.</p>
+        </div>
+        <div style="border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; padding: 22px">
+          <div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 17px; color: #7DC242">Acompanhamento diário</div>
+          <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #A9BFBD">Movimentação do protocolo checada todo dia útil, não uma vez por mês.</p>
+        </div>
+        <div style="border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; padding: 22px">
+          <div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 17px; color: #7DC242">Do início ao fim</div>
+          <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #A9BFBD">Da viabilidade à renovação da licença — sem repassar você pra outro fornecedor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 0">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A">Áreas de atuação</div>
+    <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 0; color: #0B3B45; max-width: 640px; text-wrap: balance">Quatro frentes técnicas, um só responsável.</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 38px">
+      <div style="background: #fff; border: 1px solid #E7E9E5; border-radius: 11px; padding: 28px 24px 26px" style-hover="border-color: #7DC242">
+        <div style="width: 34px; height: 34px; border-radius: 7px; background: #EDF7E3; border: 1px solid #D2EBB6"></div>
+        <h3 style="font-family: Archivo, sans-serif; font-size: 20px; font-weight: 700; color: #0B3B45; margin: 18px 0 0">Ambiental</h3>
+        <p style="font-size: 15.5px; line-height: 1.55; color: #4A5754; margin: 10px 0 0">Licenciamento (LP, LI e LO), estudos ambientais, monitoramento, PGRS, PGRCC, PRAD e atendimento a exigências dos órgãos.</p>
+      </div>
+      <div style="background: #fff; border: 1px solid #E7E9E5; border-radius: 11px; padding: 28px 24px 26px" style-hover="border-color: #7DC242">
+        <div style="width: 34px; height: 34px; border-radius: 7px; background: #E6F1F7; border: 1px solid #BFDCEB"></div>
+        <h3 style="font-family: Archivo, sans-serif; font-size: 20px; font-weight: 700; color: #0B3B45; margin: 18px 0 0">Civil</h3>
+        <p style="font-size: 15.5px; line-height: 1.55; color: #4A5754; margin: 10px 0 0">Projetos arquitetônicos e partidos urbanísticos, drenagem e projetos de prevenção e combate a incêndio e pânico.</p>
+      </div>
+      <div style="background: #fff; border: 1px solid #E7E9E5; border-radius: 11px; padding: 28px 24px 26px" style-hover="border-color: #7DC242">
+        <div style="width: 34px; height: 34px; border-radius: 7px; background: #EDF7E3; border: 1px solid #D2EBB6"></div>
+        <h3 style="font-family: Archivo, sans-serif; font-size: 20px; font-weight: 700; color: #0B3B45; margin: 18px 0 0">Florestal</h3>
+        <p style="font-size: 15.5px; line-height: 1.55; color: #4A5754; margin: 10px 0 0">Supressão de vegetação, autorização de captura e transporte de material biológico, estudos de fauna e flora e recuperação de áreas degradadas.</p>
+      </div>
+      <div style="background: #fff; border: 1px solid #E7E9E5; border-radius: 11px; padding: 28px 24px 26px" style-hover="border-color: #7DC242">
+        <div style="width: 34px; height: 34px; border-radius: 7px; background: #E6F1F7; border: 1px solid #BFDCEB"></div>
+        <h3 style="font-family: Archivo, sans-serif; font-size: 20px; font-weight: 700; color: #0B3B45; margin: 18px 0 0">Sanitária</h3>
+        <p style="font-size: 15.5px; line-height: 1.55; color: #4A5754; margin: 10px 0 0">Abastecimento de água, esgotamento sanitário (inclusive industrial), gestão de resíduos sólidos e drenagem.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 0">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start">
+      <div style="position: sticky; top: 110px">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A">Serviços</div>
+        <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 0; color: #0B3B45; text-wrap: balance">O que a Integral entrega na prática.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #4A5754; margin: 20px 0 0">Não é só o documento assinado — é o resultado que ele destrava no seu empreendimento.</p>
+        <a href="https://wa.me/5584999007976" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; margin-top: 24px; background: #2AA24A; color: #fff; padding: 14px 24px; border-radius: 7px; font-weight: 600; font-size: 15.5px" style-hover="background: #23883E; color: #fff">Tirar dúvida sobre o meu caso</a>
+      </div>
+      <div style="display: grid; gap: 14px">
+        <div style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 24px 26px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 0">Licenciamento ambiental completo</h3>
+          <p style="font-size: 16px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Obtenção e renovação de LP, LI e LO, outorgas e autorizações — você opera legalizado e para de acumular passivo.</p>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 24px 26px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 0">Projetos hidrossanitários</h3>
+          <p style="font-size: 16px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Água, esgoto (inclusive industrial) e drenagem dimensionados para aprovar de primeira na concessionária.</p>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 24px 26px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 0">Projetos de incêndio — AVCB e CLCB</h3>
+          <p style="font-size: 16px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Prevenção e combate a incêndio e pânico até a liberação do Corpo de Bombeiros, para o alvará sair sem trava.</p>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 24px 26px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 0">Estudos ambientais e monitoramento</h3>
+          <p style="font-size: 16px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Fauna, flora, geomorfologia, topografia e geoprocessamento — a base técnica que sustenta o processo quando o órgão questiona.</p>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 24px 26px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 0">Consultoria e resolução de pendências</h3>
+          <p style="font-size: 16px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Notificações, exigências e adequação à legislação: sua equipe volta a cuidar da operação em vez de correr atrás de papel.</p>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 24px 26px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 0">Gerenciamento de resíduos sólidos</h3>
+          <p style="font-size: 16px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Programas de PGRS na instalação e na operação, prontos para fiscalização a qualquer momento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="processo" style="background: #F2F4F0; margin-top: 96px; border-top: 1px solid #E7E9E5; border-bottom: 1px solid #E7E9E5">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 84px 24px">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A">Como funciona</div>
+      <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 0; color: #0B3B45; max-width: 620px; text-wrap: balance">Quatro etapas, do primeiro contato à licença na mão.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; margin-top: 40px">
+        <div style="border-top: 3px solid #7DC242; padding-top: 20px">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #66756F">01</div>
+          <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 8px 0 0">Diagnóstico</h3>
+          <p style="font-size: 15.5px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Você conta o que precisa; a gente mapeia quais licenças, estudos e órgãos entram no caso.</p>
+        </div>
+        <div style="border-top: 3px solid #7DC242; padding-top: 20px">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #66756F">02</div>
+          <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 8px 0 0">Proposta</h3>
+          <p style="font-size: 15.5px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Escopo, prazo e investimento por escrito — sem serviço surpresa no meio do caminho.</p>
+        </div>
+        <div style="border-top: 3px solid #7DC242; padding-top: 20px">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #66756F">03</div>
+          <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 8px 0 0">Execução técnica</h3>
+          <p style="font-size: 15.5px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Levantamentos, estudos e projetos elaborados e protocolados pela nossa equipe, com ART.</p>
+        </div>
+        <div style="border-top: 3px solid #7DC242; padding-top: 20px">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #66756F">04</div>
+          <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 8px 0 0">Acompanhamento até a licença</h3>
+          <p style="font-size: 15.5px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Processo monitorado diariamente e exigências respondidas no prazo, até a emissão — e na renovação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 0">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A">Projetos</div>
+        <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 0; color: #0B3B45; max-width: 620px; text-wrap: balance">Mais de 100 empreendimentos licenciados.</h2>
+      </div>
+      <p style="font-size: 16px; color: #66756F; margin: 0; max-width: 320px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.6">Substituir pelas fotos reais de obra, vistoria e levantamento de campo.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 34px">
+      <div>
+        <div style="aspect-ratio: 4/3; border-radius: 10px; border: 1px solid #E1E4DE; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #66756F">[ foto ] loteamento licenciado</span>
+        </div>
+        <h3 style="font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; color: #0B3B45; margin: 14px 0 0">Loteamentos e condomínios</h3>
+        <p style="font-size: 15.5px; line-height: 1.5; color: #4A5754; margin: 6px 0 0">Licenciamento, drenagem, água e esgoto do parcelamento à entrega.</p>
+      </div>
+      <div>
+        <div style="aspect-ratio: 4/3; border-radius: 10px; border: 1px solid #E1E4DE; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #66756F">[ foto ] planta industrial</span>
+        </div>
+        <h3 style="font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; color: #0B3B45; margin: 14px 0 0">Indústria e comércio</h3>
+        <p style="font-size: 15.5px; line-height: 1.5; color: #4A5754; margin: 6px 0 0">Regularização, efluentes industriais, PGRS e renovação de licenças.</p>
+      </div>
+      <div>
+        <div style="aspect-ratio: 4/3; border-radius: 10px; border: 1px solid #E1E4DE; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #66756F">[ foto ] pousada / hotelaria</span>
+        </div>
+        <h3 style="font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; color: #0B3B45; margin: 14px 0 0">Hotelaria e pousadas</h3>
+        <p style="font-size: 15.5px; line-height: 1.5; color: #4A5754; margin: 6px 0 0">Licenciamento em área litorânea, saneamento e projeto de incêndio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipe" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 0">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A">Equipe</div>
+        <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 0; color: #0B3B45; text-wrap: balance">Quem assina os seus projetos.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #4A5754; margin: 20px 0 0; text-wrap: pretty">Todo estudo e projeto sai com responsável técnico registrado e ART emitida. Registro no CREA, parceiros estratégicos para demandas específicas e sete anos de convivência com as exigências dos órgãos ambientais do Rio Grande do Norte.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px">
+          <span style="border: 1px solid #D5DBD3; border-radius: 100px; padding: 8px 15px; font-size: 14px; color: #3D4A47; background: #fff">Eng. Ambiental</span>
+          <span style="border: 1px solid #D5DBD3; border-radius: 100px; padding: 8px 15px; font-size: 14px; color: #3D4A47; background: #fff">Eng. Sanitarista</span>
+          <span style="border: 1px solid #D5DBD3; border-radius: 100px; padding: 8px 15px; font-size: 14px; color: #3D4A47; background: #fff">Eng. Civil</span>
+          <span style="border: 1px solid #D5DBD3; border-radius: 100px; padding: 8px 15px; font-size: 14px; color: #3D4A47; background: #fff">Eng. Florestal</span>
+          <span style="border: 1px solid #D5DBD3; border-radius: 100px; padding: 8px 15px; font-size: 14px; color: #3D4A47; background: #fff">Eng. de Segurança do Trabalho</span>
+          <span style="border: 1px solid #D5DBD3; border-radius: 100px; padding: 8px 15px; font-size: 14px; color: #3D4A47; background: #fff">Biólogo</span>
+          <span style="border: 1px solid #D5DBD3; border-radius: 100px; padding: 8px 15px; font-size: 14px; color: #3D4A47; background: #fff">Geólogo</span>
+          <span style="border: 1px solid #D5DBD3; border-radius: 100px; padding: 8px 15px; font-size: 14px; color: #3D4A47; background: #fff">Arquiteto</span>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+        <div style="aspect-ratio: 3/4; border-radius: 10px; border: 1px solid #E1E4DE; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #66756F; line-height: 1.5">[ foto ] responsável técnico<br />nome + formação + CREA</span>
+        </div>
+        <div style="aspect-ratio: 3/4; border-radius: 10px; border: 1px solid #E1E4DE; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px; margin-top: 32px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #66756F; line-height: 1.5">[ foto ] responsável técnico<br />nome + formação + CREA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ mostrarDepoimentos }}" hint-placeholder-val="{{ true }}">
+    <section style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 0">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A">Clientes</div>
+      <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 0; color: #0B3B45; max-width: 620px; text-wrap: balance">O que dizem os empreendedores atendidos.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 34px">
+        <div style="background: #fff; border: 1px dashed #C9CFC7; border-radius: 11px; padding: 26px">
+          <p style="font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; line-height: 1.6; color: #66756F; margin: 0">[INSERIR DEPOIMENTO 1 — foco em prazo: quanto tempo levou pra licença sair]</p>
+          <div style="display: flex; align-items: center; gap: 12px; margin-top: 22px">
+            <div style="width: 42px; height: 42px; border-radius: 50%; background: #EFF1EC; border: 1px dashed #C9CFC7"></div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #66756F; line-height: 1.4">[nome]<br />[empresa / segmento]</div>
+          </div>
+        </div>
+        <div style="background: #fff; border: 1px dashed #C9CFC7; border-radius: 11px; padding: 26px">
+          <p style="font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; line-height: 1.6; color: #66756F; margin: 0">[INSERIR DEPOIMENTO 2 — foco em resolver pendência/notificação do órgão]</p>
+          <div style="display: flex; align-items: center; gap: 12px; margin-top: 22px">
+            <div style="width: 42px; height: 42px; border-radius: 50%; background: #EFF1EC; border: 1px dashed #C9CFC7"></div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #66756F; line-height: 1.4">[nome]<br />[empresa / segmento]</div>
+          </div>
+        </div>
+        <div style="background: #fff; border: 1px dashed #C9CFC7; border-radius: 11px; padding: 26px">
+          <p style="font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; line-height: 1.6; color: #66756F; margin: 0">[INSERIR DEPOIMENTO 3 — foco em atendimento e acompanhamento do processo]</p>
+          <div style="display: flex; align-items: center; gap: 12px; margin-top: 22px">
+            <div style="width: 42px; height: 42px; border-radius: 50%; background: #EFF1EC; border: 1px dashed #C9CFC7"></div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #66756F; line-height: 1.4">[nome]<br />[empresa / segmento]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 0">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A">Antes de decidir</div>
+        <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 0; color: #0B3B45; text-wrap: balance">As dúvidas que a gente mais escuta.</h2>
+      </div>
+      <div style="display: grid; gap: 20px">
+        <div style="background: #fff; border: 1px solid #E7E9E5; border-left: 3px solid #7DC242; border-radius: 10px; padding: 24px 26px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; color: #0B3B45; margin: 0">"Deve ser caro demais pro tamanho do meu negócio."</h3>
+          <p style="font-size: 16px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">O escopo é dimensionado pelo porte e pelo potencial poluidor do empreendimento — não existe pacote único. Uma multa por operação irregular, ou um mês de obra parada, quase sempre custa mais do que o processo bem conduzido.</p>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E9E5; border-left: 3px solid #7DC242; border-radius: 10px; padding: 24px 26px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; color: #0B3B45; margin: 0">"Isso demora meses e eu não posso esperar."</h3>
+          <p style="font-size: 16px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">O prazo de análise é do órgão e ninguém sério promete data. O que dá pra controlar é o que mais atrasa: documentação incompleta e exigência respondida fora do prazo. É exatamente aí que o acompanhamento diário atua.</p>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E9E5; border-left: 3px solid #7DC242; border-radius: 10px; padding: 24px 26px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; color: #0B3B45; margin: 0">"Já tenho um profissional cuidando disso."</h3>
+          <p style="font-size: 16px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Ótimo. Se o processo emperrou numa frente que ele não cobre — fauna, geologia, incêndio, saneamento — a Integral pode entrar só nessa parte, ou assumir o conjunto. Você decide depois do diagnóstico.</p>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E9E5; border-left: 3px solid #7DC242; border-radius: 10px; padding: 24px 26px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; color: #0B3B45; margin: 0">"Meu empreendimento fica fora de Natal."</h3>
+          <p style="font-size: 16px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">A maior parte da carteira está no Rio Grande do Norte, mas a equipe tem competência técnica para atuar em todo o país — com deslocamento de campo previsto em proposta.</p>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E9E5; border-left: 3px solid #7DC242; border-radius: 10px; padding: 24px 26px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; color: #0B3B45; margin: 0">"Já fui mal atendido por consultoria antes."</h3>
+          <p style="font-size: 16px; line-height: 1.55; color: #4A5754; margin: 8px 0 0">Por isso o retorno aqui é diário e o responsável técnico é nominal: você sabe quem está com o seu processo e em que etapa ele está, a qualquer momento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 900px; margin: 0 auto; padding: 96px 24px 0">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A; text-align: center">FAQ</div>
+    <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 34px; color: #0B3B45; text-align: center; text-wrap: balance">Perguntas frequentes</h2>
+    <div style="display: grid; gap: 10px">
+      <details style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 20px 24px">
+        <summary style="list-style: none; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 600; font-size: 17.5px; color: #0B3B45; display: flex; justify-content: space-between; gap: 16px; align-items: center">Quanto tempo leva pra sair a licença?<span style="color: #7DC242; font-size: 22px; line-height: 1">+</span></summary>
+        <p style="font-size: 16px; line-height: 1.6; color: #4A5754; margin: 12px 0 0">Depende do porte, do tipo de atividade e do órgão competente. No diagnóstico inicial a gente indica o rito aplicável e uma estimativa realista — e mantém você informado a cada movimentação do processo.</p>
+      </details>
+      <details style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 20px 24px">
+        <summary style="list-style: none; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 600; font-size: 17.5px; color: #0B3B45; display: flex; justify-content: space-between; gap: 16px; align-items: center">Preciso saber qual licença pedir antes de falar com vocês?<span style="color: #7DC242; font-size: 22px; line-height: 1">+</span></summary>
+        <p style="font-size: 16px; line-height: 1.6; color: #4A5754; margin: 12px 0 0">Não. Basta descrever a atividade, o local e em que fase está o empreendimento. Identificar o enquadramento e as licenças necessárias é parte do nosso trabalho.</p>
+      </details>
+      <details style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 20px 24px">
+        <summary style="list-style: none; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 600; font-size: 17.5px; color: #0B3B45; display: flex; justify-content: space-between; gap: 16px; align-items: center">Vocês atendem obras já em andamento ou já autuadas?<span style="color: #7DC242; font-size: 22px; line-height: 1">+</span></summary>
+        <p style="font-size: 16px; line-height: 1.6; color: #4A5754; margin: 12px 0 0">Sim. Regularização de empreendimento em operação, resposta a notificações e resolução de pendências ambientais são parte rotineira do serviço.</p>
+      </details>
+      <details style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 20px 24px">
+        <summary style="list-style: none; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 600; font-size: 17.5px; color: #0B3B45; display: flex; justify-content: space-between; gap: 16px; align-items: center">Dá pra contratar só um projeto, sem o licenciamento inteiro?<span style="color: #7DC242; font-size: 22px; line-height: 1">+</span></summary>
+        <p style="font-size: 16px; line-height: 1.6; color: #4A5754; margin: 12px 0 0">Dá. Projeto de incêndio, hidrossanitário, drenagem, topografia ou um estudo específico podem ser contratados de forma isolada.</p>
+      </details>
+      <details style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 20px 24px">
+        <summary style="list-style: none; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 600; font-size: 17.5px; color: #0B3B45; display: flex; justify-content: space-between; gap: 16px; align-items: center">Como funciona o acompanhamento durante o contrato?<span style="color: #7DC242; font-size: 22px; line-height: 1">+</span></summary>
+        <p style="font-size: 16px; line-height: 1.6; color: #4A5754; margin: 12px 0 0">O processo é checado diariamente junto ao órgão e você tem contato direto com o responsável técnico por WhatsApp, telefone e e-mail, das 8h às 17h.</p>
+      </details>
+      <details style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 20px 24px">
+        <summary style="list-style: none; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 600; font-size: 17.5px; color: #0B3B45; display: flex; justify-content: space-between; gap: 16px; align-items: center">Os projetos vêm com responsabilidade técnica?<span style="color: #7DC242; font-size: 22px; line-height: 1">+</span></summary>
+        <p style="font-size: 16px; line-height: 1.6; color: #4A5754; margin: 12px 0 0">Sim. A empresa tem registro no CREA e todos os projetos e estudos são emitidos com ART do profissional responsável.</p>
+      </details>
+      <details style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 20px 24px">
+        <summary style="list-style: none; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 600; font-size: 17.5px; color: #0B3B45; display: flex; justify-content: space-between; gap: 16px; align-items: center">Como é feito o orçamento?<span style="color: #7DC242; font-size: 22px; line-height: 1">+</span></summary>
+        <p style="font-size: 16px; line-height: 1.6; color: #4A5754; margin: 12px 0 0">Depois do diagnóstico inicial, sem custo. Você recebe escopo, prazo e investimento por escrito, com condições de pagamento acertadas caso a caso.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contato" style="margin-top: 96px; background: #0B3B45; color: #fff; position: relative; overflow: hidden">
+    <div style="position: absolute; inset: 0; background: repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 16px)"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 84px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start">
+      <div>
+        <h2 style="font-family: Archivo, sans-serif; font-size: clamp(32px, 5.6vw, 44px); font-weight: 800; line-height: 1.08; letter-spacing: -0.028em; margin: 0; text-wrap: balance">Seu empreendimento pode estar regular no próximo ciclo.</h2>
+        <p style="font-size: 18px; line-height: 1.6; color: #C6D6D4; margin: 20px 0 0; max-width: 480px; text-wrap: pretty">Cada mês de processo parado é obra travada, financiamento suspenso e risco de autuação em aberto. Conte o seu caso — o diagnóstico inicial é sem custo e você já sai sabendo quais licenças precisa.</p>
+        <a href="https://wa.me/5584999007976?text=Ol%C3%A1%2C%20quero%20um%20diagn%C3%B3stico%20do%20meu%20empreendimento." target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; margin-top: 28px; background: #7DC242; color: #0B3B45; padding: 17px 30px; border-radius: 7px; font-weight: 700; font-size: 17px" style-hover="background: #8FD152; color: #0B3B45">Falar agora no WhatsApp</a>
+        <div style="display: grid; gap: 14px; margin-top: 38px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.13)">
+          <div style="display: flex; gap: 12px; font-size: 16px; color: #C6D6D4"><span style="color: #7DC242; font-family: 'IBM Plex Mono', monospace; font-size: 13px; width: 78px; flex-shrink: 0; padding-top: 3px">TEL</span><a href="tel:+5584999007976" style="color: #fff" style-hover="color: #7DC242">(84) 99900-7976</a></div>
+          <div style="display: flex; gap: 12px; font-size: 16px; color: #C6D6D4"><span style="color: #7DC242; font-family: 'IBM Plex Mono', monospace; font-size: 13px; width: 78px; flex-shrink: 0; padding-top: 3px">E-MAIL</span><a href="mailto:integralsolucoesambientais@gmail.com" style="color: #fff; word-break: break-all" style-hover="color: #7DC242">integralsolucoesambientais@gmail.com</a></div>
+          <div style="display: flex; gap: 12px; font-size: 16px; color: #C6D6D4"><span style="color: #7DC242; font-family: 'IBM Plex Mono', monospace; font-size: 13px; width: 78px; flex-shrink: 0; padding-top: 3px">ENDEREÇO</span><span>Av. Prudente de Morais, 5121 — Lagoa Nova<br />Natal/RN, 59064-625</span></div>
+          <div style="display: flex; gap: 12px; font-size: 16px; color: #C6D6D4"><span style="color: #7DC242; font-family: 'IBM Plex Mono', monospace; font-size: 13px; width: 78px; flex-shrink: 0; padding-top: 3px">HORÁRIO</span><span>Segunda a sexta, das 8h às 17h</span></div>
+        </div>
+      </div>
+      <sc-if value="{{ mostrarFormulario }}" hint-placeholder-val="{{ true }}">
+        <div style="background: #fff; border-radius: 12px; padding: 34px">
+          <h3 style="font-family: Archivo, sans-serif; font-size: 24px; font-weight: 700; color: #0B3B45; margin: 0; letter-spacing: -0.02em">Solicitar orçamento</h3>
+          <p style="font-size: 15px; color: #4A5754; margin: 8px 0 0">Preencha e a gente retorna em até 1 dia útil.</p>
+          <div style="display: grid; gap: 14px; margin-top: 22px">
+            <label style="display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: #26332F">Nome
+              <input type="text" placeholder="Seu nome" style="border: 1px solid #D5DBD3; border-radius: 7px; padding: 13px 14px; font-size: 15.5px; font-family: 'IBM Plex Sans', sans-serif; color: #16211F; font-weight: 400; min-height: 46px" />
+            </label>
+            <label style="display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: #26332F">WhatsApp
+              <input type="tel" placeholder="(00) 00000-0000" style="border: 1px solid #D5DBD3; border-radius: 7px; padding: 13px 14px; font-size: 15.5px; font-family: 'IBM Plex Sans', sans-serif; color: #16211F; font-weight: 400; min-height: 46px" />
+            </label>
+            <label style="display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: #26332F">Tipo de empreendimento
+              <select style="border: 1px solid #D5DBD3; border-radius: 7px; padding: 13px 14px; font-size: 15.5px; font-family: 'IBM Plex Sans', sans-serif; color: #16211F; font-weight: 400; min-height: 46px; background: #fff">
+                <option>Indústria</option>
+                <option>Comércio</option>
+                <option>Loteamento</option>
+                <option>Condomínio</option>
+                <option>Hotelaria / pousada</option>
+                <option>Serviços</option>
+                <option>Outro</option>
+              </select>
+            </label>
+            <label style="display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: #26332F">O que você precisa resolver
+              <textarea rows="3" placeholder="Ex.: preciso renovar a LO da minha fábrica em Parnamirim" style="border: 1px solid #D5DBD3; border-radius: 7px; padding: 13px 14px; font-size: 15.5px; font-family: 'IBM Plex Sans', sans-serif; color: #16211F; font-weight: 400; resize: vertical"></textarea>
+            </label>
+            <label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: #4A5754; line-height: 1.5">
+              <input type="checkbox" style="margin-top: 3px; width: 17px; height: 17px; accent-color: #2AA24A; flex-shrink: 0" />
+              <span>Autorizo o contato e o tratamento dos meus dados conforme a <a href="#" style="color: #1B6E9B; text-decoration: underline">Política de Privacidade</a> e a LGPD.</span>
+            </label>
+            <button type="button" style="background: #2AA24A; color: #fff; border: none; border-radius: 7px; padding: 16px; font-size: 16.5px; font-weight: 700; font-family: Archivo, sans-serif; cursor: pointer; min-height: 48px" style-hover="background: #23883E">Solicitar meu orçamento</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <footer style="background: #072B33; color: #8FA5A3; padding: 44px 24px 96px">
+    <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between">
+      <img src="assets/wordmark-white.png" alt="Integral Engenharia e Soluções Ambientais" style="height: 40px; width: auto; opacity: 0.9" />
+      <div style="display: flex; gap: 22px; font-size: 14.5px">
+        <a href="#" style="color: #8FA5A3" style-hover="color: #7DC242">Instagram</a>
+        <a href="#" style="color: #8FA5A3" style-hover="color: #7DC242">LinkedIn</a>
+        <a href="#contato" style="color: #8FA5A3" style-hover="color: #7DC242">Contato</a>
+      </div>
+      <div style="font-size: 13.5px; color: #6B807E">© 2026 Integral Engenharia e Soluções Ambientais · Natal/RN</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5584999007976" target="_blank" rel="noopener" style="position: fixed; right: 22px; bottom: 22px; z-index: 60; background: #2AA24A; color: #fff; border-radius: 100px; padding: 15px 24px; font-weight: 700; font-size: 15.5px; box-shadow: 0 8px 26px rgba(11,59,69,0.28); min-height: 44px; display: flex; align-items: center" style-hover="background: #23883E; color: #fff">WhatsApp</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mostrarDepoimentos&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;},&quot;mostrarFormulario&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      mostrarDepoimentos: this.props.mostrarDepoimentos ?? true,
+      mostrarFormulario: this.props.mostrarFormulario ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>
