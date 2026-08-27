@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-27T12:00:00.000Z",
+  "generatedAt": "2026-08-28T06:00:00.000Z",
   "title": "Design System: Integral Engenharia e Soluções Ambientais",
   "extensions": {
     "colorMeta": {
@@ -16,21 +16,34 @@
       "fundo-alternado": { "role": "neutral", "displayName": "Fundo Alternado", "canonical": "#F2F4F0" },
       "borda-clara": { "role": "neutral", "displayName": "Borda Clara", "canonical": "#E7E9E5" },
       "texto-corpo-claro": { "role": "neutral", "displayName": "Texto de Corpo (claro)", "canonical": "#4A5754" },
-      "texto-muted": { "role": "neutral", "displayName": "Texto Muted", "canonical": "#66756F" }
+      "texto-muted": { "role": "neutral", "displayName": "Texto Muted", "canonical": "#66756F" },
+      "texto-navegacao": { "role": "neutral", "displayName": "Texto de Navegação", "canonical": "#3D4A47" }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Título do hero e do CTA final de contato." },
+      "display": { "displayName": "Display", "purpose": "Título do hero — o maior gesto tipográfico da página." },
+      "display-fechamento": { "displayName": "Display — Fechamento", "purpose": "Título do CTA final de contato, um degrau abaixo do hero." },
       "headline": { "displayName": "Headline", "purpose": "Título de cada seção (h2)." },
-      "title": { "displayName": "Title", "purpose": "Títulos de card, FAQ e item de serviço." },
-      "body": { "displayName": "Body", "purpose": "Parágrafos de corpo com largura de linha controlada." },
-      "label": { "displayName": "Label / Mono Stamp", "purpose": "Eyebrows, estatísticas, legendas técnicas e placeholders — sempre IBM Plex Mono uppercase." }
+      "title": { "displayName": "Title", "purpose": "Títulos de card de serviço/processo/objeção, card de destaque da solução, pergunta do FAQ (weight 600)." },
+      "title-destaque": { "displayName": "Title — Destaque", "purpose": "Título dos cards de Áreas de atuação — o Title mais proeminente da página." },
+      "body": { "displayName": "Body", "purpose": "Parágrafo padrão." },
+      "body-lead": { "displayName": "Body — Lead", "purpose": "Parágrafo de abertura logo abaixo de um Headline." },
+      "body-painel-escuro": { "displayName": "Body — Painel Escuro", "purpose": "Corpo de texto em painéis escuros de maior peso (solução, fechamento de contato)." },
+      "numeral": { "displayName": "Numeral", "purpose": "Os quatro grandes números do hero (+100, 7 anos, 8 áreas, CREA)." },
+      "label": { "displayName": "Label / Mono Stamp", "purpose": "Eyebrow de seção e badge do hero — sempre IBM Plex Mono uppercase, 12.5px, tracking 0.1em." },
+      "label-micro": { "displayName": "Label — Micro", "purpose": "Rótulos compactos do 'Quadro de Comando': tags 'Ativo', legenda das placas-mostrador, micro-nota do formulário." },
+      "caption-mono-sm": { "displayName": "Caption Mono — SM", "purpose": "Legendas de placeholder de foto/depoimento." },
+      "caption-mono": { "displayName": "Caption Mono", "purpose": "Números de etapa, rótulo de contato (TEL, E-MAIL), nota 'substituir pelas fotos reais'." },
+      "caption-mono-lg": { "displayName": "Caption Mono — LG", "purpose": "Texto de depoimento placeholder." },
+      "fine-print": { "displayName": "Fine Print", "purpose": "Copyright do rodapé e texto de consentimento LGPD — sempre Sans, nunca Mono." }
     },
     "shadows": [
       { "name": "cta-flutuante", "value": "0 8px 26px rgba(11,59,69,0.28)", "purpose": "Reservada exclusivamente ao CTA flutuante de WhatsApp; único elemento com sombra no sistema." }
     ],
     "motion": [
       { "name": "smooth-scroll", "value": "scroll-behavior: smooth", "purpose": "Rolagem suave para âncoras de navegação (#areas, #servicos, #contato etc.)." },
-      { "name": "hover-color-shift", "value": "transition implícita via style-hover em background/color/border-color", "purpose": "Único tipo de motion do sistema: mudança de cor/borda no hover, sem transform ou escala." }
+      { "name": "hover-feedback", "value": "transition: color/background-color/border-color 150-200ms ease", "purpose": "Estados de hover/focus reais (:hover, :focus-visible) em nav, CTAs, cards e links — substitui o antigo atributo style-hover inerte." },
+      { "name": "button-lift", "value": "transform: translateY(-1px); transition: transform 150ms cubic-bezier(0.16,1,0.3,1)", "purpose": "Lift sutil no hover de CTAs primários; volta a 0 no :active como feedback de pressão. Ghost/secondary não usa lift, reforçando hierarquia." },
+      { "name": "faq-icon-rotate", "value": "transform: rotate(45deg); transition: transform 200ms cubic-bezier(0.16,1,0.3,1)", "purpose": "Glifo '+' do FAQ vira '×' visual ao abrir (details[open])." }
     ],
     "breakpoints": []
   },
@@ -41,7 +54,7 @@
       "refersTo": "button-primary",
       "description": "CTA principal sobre fundo branco/claro — ex. 'Falar no WhatsApp' no header.",
       "html": "<a class=\"ds-btn-primary\" href=\"#\">Falar no WhatsApp</a>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; min-height: 44px; background: #1D7A38; color: #fff; padding: 12px 20px; border-radius: 6px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: 14.5px; white-space: nowrap; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: #155A29; } .ds-btn-primary:focus-visible { outline: 2px solid #2AA24A; outline-offset: 2px; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; min-height: 44px; background: #1D7A38; color: #fff; padding: 12px 20px; border-radius: 6px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: 14.5px; white-space: nowrap; transition: background-color 150ms ease, transform 150ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: #155A29; transform: translateY(-1px); } .ds-btn-primary:active { background: #155A29; transform: translateY(0); } .ds-btn-primary:focus-visible { outline: 2px solid #2AA24A; outline-offset: 2px; }"
     },
     {
       "name": "Botão Primário (fundo escuro)",
@@ -49,7 +62,7 @@
       "refersTo": "button-primary-on-dark",
       "description": "CTA principal sobre painel de petróleo escuro — ex. hero, seção de contato.",
       "html": "<div style=\"background:#0B3B45;padding:24px;border-radius:12px;display:inline-block\"><a class=\"ds-btn-primary-dark\" href=\"#\">Quero regularizar meu empreendimento</a></div>",
-      "css": ".ds-btn-primary-dark { display: inline-flex; align-items: center; min-height: 44px; background: #7DC242; color: #0B3B45; padding: 17px 30px; border-radius: 7px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 700; font-size: 16.5px; } .ds-btn-primary-dark:hover, .ds-btn-primary-dark:focus-visible { background: #8FD152; } .ds-btn-primary-dark:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }"
+      "css": ".ds-btn-primary-dark { display: inline-flex; align-items: center; min-height: 44px; background: #7DC242; color: #0B3B45; padding: 17px 30px; border-radius: 7px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 700; font-size: 16.5px; transition: background-color 150ms ease, transform 150ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary-dark:hover, .ds-btn-primary-dark:focus-visible { background: #8FD152; transform: translateY(-1px); } .ds-btn-primary-dark:active { background: #8FD152; transform: translateY(0); } .ds-btn-primary-dark:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }"
     },
     {
       "name": "Botão Ghost (fundo escuro)",
@@ -57,7 +70,7 @@
       "refersTo": "button-ghost",
       "description": "CTA secundário sobre painel escuro — sem preenchimento, borda translúcida.",
       "html": "<div style=\"background:#0B3B45;padding:24px;border-radius:12px;display:inline-block\"><a class=\"ds-btn-ghost\" href=\"#\">Solicitar orçamento</a></div>",
-      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; min-height: 44px; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 17px 28px; border-radius: 7px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: 16.5px; } .ds-btn-ghost:hover, .ds-btn-ghost:focus-visible { border-color: #fff; }"
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; min-height: 44px; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 17px 28px; border-radius: 7px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: 16.5px; transition: border-color 150ms ease; } .ds-btn-ghost:hover, .ds-btn-ghost:focus-visible { border-color: #fff; }"
     },
     {
       "name": "Card de Área de Atuação",
@@ -89,7 +102,7 @@
       "refersTo": null,
       "description": "Accordion nativo via <details>/<summary> com indicador '+' verde.",
       "html": "<details class=\"ds-faq\"><summary class=\"ds-faq-summary\">Quanto tempo leva pra sair a licença?<span class=\"ds-faq-icon\">+</span></summary><p class=\"ds-faq-answer\">Depende do porte, do tipo de atividade e do órgão competente.</p></details>",
-      "css": ".ds-faq { background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 20px 24px; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq-summary { list-style: none; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 600; font-size: 17.5px; color: #0B3B45; display: flex; justify-content: space-between; gap: 16px; align-items: center; } .ds-faq-icon { color: #7DC242; font-size: 22px; line-height: 1; } .ds-faq-answer { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; line-height: 1.6; color: #4A5754; margin: 12px 0 0; }"
+      "css": ".ds-faq { background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 20px 24px; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq-summary { list-style: none; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 600; font-size: 19px; line-height: 1.3; color: #0B3B45; display: flex; justify-content: space-between; gap: 16px; align-items: center; } .ds-faq-icon { color: #7DC242; font-size: 22px; line-height: 1; display: inline-block; transition: transform 200ms cubic-bezier(0.16,1,0.3,1); } .ds-faq[open] .ds-faq-icon { transform: rotate(45deg); } .ds-faq-answer { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; line-height: 1.6; color: #4A5754; margin: 12px 0 0; max-width: 640px; }"
     },
     {
       "name": "Placeholder de Imagem",
@@ -139,14 +152,17 @@
     "rules": [
       { "name": "The Signal Green Rule", "body": "Verde nunca é decorativo — ele só aparece em elementos de ação (CTA), aprovação (ícones de check, estatísticas) ou orientação (eyebrow labels). Se remover o verde de um elemento não muda seu significado, ele não deveria estar lá.", "section": "colors" },
       { "name": "The Petrol Authority Rule", "body": "Seções em Azul-Petróleo marcam os pontos de maior peso institucional da narrativa (abertura, proposta de solução, fechamento com contato) — nunca seções de conteúdo secundário ou intermediário.", "section": "colors" },
-      { "name": "The Mono Stamp Rule", "body": "Todo rótulo, legenda técnica ou dado numérico de apoio (eyebrows, estatísticas, '01/02/03/04', placeholders) usa IBM Plex Mono em uppercase — nunca Archivo ou IBM Plex Sans. É a assinatura tipográfica que distingue 'dado técnico' de 'conteúdo narrativo'.", "section": "typography" },
+      { "name": "The Mono Stamp Rule", "body": "Todo rótulo, legenda técnica ou dado numérico de apoio usa IBM Plex Mono — nunca Archivo ou IBM Plex Sans. Dentro do mono, o Label leva tracking uppercase (0.1em) e o Caption Mono não — é a diferença de tracking, não de família, que separa rótulo de legenda de apoio.", "section": "typography" },
+      { "name": "The One Size, One Job Rule", "body": "Cada tamanho de fonte pertence a exatamente um papel. Nenhum valor de font-size faz dupla função como Title numa seção e Body noutra.", "section": "typography" },
       { "name": "The Fluid Grid Rule", "body": "Toda grade de conteúdo usa auto-fit/minmax; nenhuma media query controla o número de colunas. Isso mantém o layout consistente em qualquer largura de viewport sem pontos de quebra abruptos.", "section": "elevation" },
       { "name": "The Flat-by-Default Rule", "body": "Sombra é a exceção que carrega significado, não um recurso decorativo. Um único elemento por página pode ter sombra — o CTA mais persistente — e ela existe para dizer 'isto flutua sobre tudo', não para dar profundidade genérica.", "section": "elevation" },
       { "name": "The Dashed Placeholder Rule", "body": "Qualquer conteúdo que o cliente ainda precisa fornecer (fotos reais, depoimentos) usa borda tracejada + legenda em IBM Plex Mono explicando o que deve entrar ali. Nunca deixar um placeholder sem essa legenda — o 'vazio' é sempre rotulado, nunca silencioso.", "section": "elevation" },
-      { "name": "The Amber Alert Rule", "body": "Âmbar é a única cor de alerta do sistema e aparece exclusivamente nos indicadores da seção 'O problema'. Nunca reaproveitar âmbar como acento decorativo, hover ou destaque fora desse contexto de risco.", "section": "colors" }
+      { "name": "The Amber Alert Rule", "body": "Âmbar é a única cor de alerta do sistema e aparece exclusivamente nos indicadores da seção 'O problema'. Nunca reaproveitar âmbar como acento decorativo, hover ou destaque fora desse contexto de risco.", "section": "colors" },
+      { "name": "The No Inline Duplicate Rule", "body": "Nenhuma propriedade que uma classe de hover controla (background, color, border) pode também ser fixada no style inline do mesmo elemento — o inline sempre vence a pseudo-classe :hover e o hover para de funcionar silenciosamente, sem erro visível.", "section": "elevation" }
     ],
     "dos": [
-      "Do usar IBM Plex Mono uppercase para todo rótulo técnico, eyebrow e legenda de dado (The Mono Stamp Rule).",
+      "Do usar IBM Plex Mono para todo rótulo técnico, eyebrow e legenda de dado — tracking 0.1em só no Label, nunca no Caption Mono (The Mono Stamp Rule).",
+      "Do usar exatamente um tamanho de fonte por papel — 19px é sempre Title, nunca Body, e vice-versa (The One Size, One Job Rule).",
       "Do manter o verde reservado a ação/aprovação — nunca decorativo (The Signal Green Rule).",
       "Do manter o sistema flat; a única sombra do site é o CTA flutuante do WhatsApp (The Flat-by-Default Rule).",
       "Do usar grids auto-fit/minmax para qualquer nova grade de conteúdo, evitando media queries de coluna (The Fluid Grid Rule).",
@@ -154,10 +170,14 @@
       "Do usar fotografia real de campo (vistoria, obra, equipe) quando o cliente fornecer — nunca stock photo genérico.",
       "Do usar Verde Ação Forte (#1D7A38/#155A29 hover), não o Verde Ação puro (#2AA24A), sempre que texto branco for sobreposto ao verde — o tom mais claro não passa no contraste WCAG AA.",
       "Do manter todo conteúdo de rascunho (depoimentos, fotos sem crédito) desligado por padrão via prop até existir conteúdo real.",
-      "Do manter os LEDs de status achatados, sem sombra ou glow, sempre acompanhados de texto que já carrega o mesmo significado (The Amber Alert Rule)."
+      "Do manter os LEDs de status achatados, sem sombra ou glow, sempre acompanhados de texto que já carrega o mesmo significado (The Amber Alert Rule).",
+      "Do respeitar prefers-reduced-motion removendo o lift dos botões, mantendo cor como feedback.",
+      "Do manter todo valor que muda no hover (background/color/border) só na regra da classe, nunca duplicado no style inline do elemento (The No Inline Duplicate Rule)."
     ],
     "donts": [
       "Don't usar Âmbar Alerta (#B8651A) fora da lista 'O problema' — ele não é um acento decorativo genérico.",
+      "Don't reintroduzir animação de entrada disparada por scroll (IntersectionObserver) — já foi tentada e removida por instabilidade; o conteúdo carrega visível de imediato.",
+      "Don't animar propriedades de layout (width, height, top, left) — usar apenas transform e opacity/cor.",
       "Don't introduzir gradientes decorativos, ilustrações ou elementos gráficos fora da hachura técnica já estabelecida.",
       "Don't usar tom de venda agressiva: sem contadores regressivos, pop-ups de urgência artificial ou linguagem de 'oferta por tempo limitado' — a credibilidade é técnica, não promocional.",
       "Don't aplicar sombra a cards, botões ou painéis de conteúdo — profundidade vem de cor e contorno, não de box-shadow.",

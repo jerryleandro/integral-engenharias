@@ -25,6 +25,7 @@ colors:
   texto-sobre-escuro-terciario: "#90A8A6"
   texto-rodape: "#8FA5A3"
   texto-rodape-muted: "#6B807E"
+  texto-navegacao: "#3D4A47"
   tag-verde-bg: "#EDF7E3"
   tag-verde-borda: "#D2EBB6"
   tag-azul-bg: "#E6F1F7"
@@ -40,6 +41,12 @@ typography:
     fontWeight: 800
     lineHeight: 1.05
     letterSpacing: "-0.028em"
+  display-fechamento:
+    fontFamily: "Archivo, sans-serif"
+    fontSize: "clamp(32px, 5.6vw, 44px)"
+    fontWeight: 800
+    lineHeight: 1.08
+    letterSpacing: "-0.028em"
   headline:
     fontFamily: "Archivo, sans-serif"
     fontSize: "clamp(28px, 5vw, 40px)"
@@ -48,27 +55,85 @@ typography:
     letterSpacing: "-0.025em"
   title:
     fontFamily: "Archivo, sans-serif"
-    fontSize: "17px – 20px"
+    fontSize: "19px"
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: "normal"
+  title-destaque:
+    fontFamily: "Archivo, sans-serif"
+    fontSize: "20px"
     fontWeight: 700
     lineHeight: 1.2
     letterSpacing: "normal"
   body:
     fontFamily: "IBM Plex Sans, system-ui, sans-serif"
-    fontSize: "15.5px – 19px"
+    fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.55
     letterSpacing: "normal"
+  body-lead:
+    fontFamily: "IBM Plex Sans, system-ui, sans-serif"
+    fontSize: "17px"
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: "normal"
+  body-painel-escuro:
+    fontFamily: "IBM Plex Sans, system-ui, sans-serif"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: "normal"
   label:
     fontFamily: "IBM Plex Mono, monospace"
-    fontSize: "12px – 13px"
+    fontSize: "12.5px"
     fontWeight: 500
     lineHeight: 1.5
     letterSpacing: "0.1em"
+  label-micro:
+    fontFamily: "IBM Plex Mono, monospace"
+    fontSize: "11px"
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: "0.1em"
+  caption-mono-sm:
+    fontFamily: "IBM Plex Mono, monospace"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: "normal"
+  caption-mono:
+    fontFamily: "IBM Plex Mono, monospace"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "normal"
+  caption-mono-lg:
+    fontFamily: "IBM Plex Mono, monospace"
+    fontSize: "13.5px"
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: "normal"
+  fine-print:
+    fontFamily: "IBM Plex Sans, system-ui, sans-serif"
+    fontSize: "13.5px"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "normal"
+  numeral:
+    fontFamily: "Archivo, sans-serif"
+    fontSize: "30px"
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: "-0.02em"
 rounded:
   pill: "100px"
-  lg: "12px – 14px"
-  md: "9px – 11px"
-  sm: "6px – 7px"
+  botao: "7px"
+  botao-compacto: "6px"
+  card: "10px"
+  card-painel-escuro: "9px"
+  card-area: "11px"
+  painel: "14px"
+  painel-formulario: "12px"
 spacing:
   section-y: "96px"
   section-y-tight: "84px"
@@ -79,7 +144,7 @@ components:
   button-primary:
     backgroundColor: "{colors.verde-acao-forte}"
     textColor: "#FFFFFF"
-    rounded: "{rounded.sm}"
+    rounded: "{rounded.botao}"
     padding: "17px 30px"
   button-primary-hover:
     backgroundColor: "{colors.verde-acao-forte-hover}"
@@ -87,7 +152,7 @@ components:
   button-primary-on-dark:
     backgroundColor: "{colors.verde-licenca}"
     textColor: "{colors.petroleo-corporativo}"
-    rounded: "{rounded.sm}"
+    rounded: "{rounded.botao}"
     padding: "17px 30px"
   button-primary-on-dark-hover:
     backgroundColor: "{colors.verde-claro-hover}"
@@ -95,12 +160,12 @@ components:
   button-ghost:
     backgroundColor: "transparent"
     textColor: "#FFFFFF"
-    rounded: "{rounded.sm}"
+    rounded: "{rounded.botao}"
     padding: "17px 28px"
   card:
     backgroundColor: "#FFFFFF"
     textColor: "{colors.texto-corpo-claro}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.card}"
     padding: "24px 26px"
   tag-pill:
     backgroundColor: "#FFFFFF"
@@ -110,7 +175,7 @@ components:
   input:
     backgroundColor: "#FFFFFF"
     textColor: "{colors.texto-base}"
-    rounded: "7px"
+    rounded: "{rounded.botao}"
     padding: "13px 14px"
     height: "46px"
   led-status:
@@ -177,6 +242,7 @@ Paleta de dois tons dominantes (petróleo + verde) sobre uma base neutra quase-b
 - **Texto Muted** (`#66756F`): legendas secundárias, números de etapa, texto de placeholder.
 - **Texto Sobre Escuro** (`#C6D6D4`, `#A9BFBD`, `#90A8A6`): hierarquia de texto secundário sobre fundo petróleo, do mais claro ao mais apagado.
 - **Texto de Rodapé** (`#8FA5A3`, `#6B807E`): tom mais frio e discreto reservado ao rodapé.
+- **Texto de Navegação** (`#3D4A47`): cor dos links do menu e das tags de especialidade da equipe ("Eng. Ambiental" etc.) — um cinza-esverdeado intermediário entre o Texto Base e o Texto de Corpo, reservado a texto de navegação/categorização, nunca a parágrafo corrido.
 
 ### Named Rules
 **The Signal Green Rule.** Verde nunca é decorativo — ele só aparece em elementos de ação (CTA), aprovação (ícones de check, estatísticas) ou orientação (eyebrow labels). Se remover o verde de um elemento não muda seu significado, ele não deveria estar lá.
@@ -194,14 +260,28 @@ Paleta de dois tons dominantes (petróleo + verde) sobre uma base neutra quase-b
 **Character:** Archivo em peso alto (700–800) e letter-spacing negativo entrega peso institucional nos títulos; IBM Plex Sans mantém o corpo de texto legível e neutro; IBM Plex Mono em uppercase e letter-spacing positivo assina cada eyebrow e estatística como um carimbo técnico — o contraste entre os três é o que dá o tom "sala de engenharia" ao invés de "agência de marketing".
 
 ### Hierarchy
-- **Display** (800, `clamp(36px, 7vw, 60px)`, line-height 1.05, letter-spacing -0.028em): título do hero e do CTA final de contato.
-- **Headline** (700, `clamp(28px, 5vw, 40px)`, line-height 1.12, letter-spacing -0.025em): título de cada seção (`h2`).
-- **Title** (700, 17–20px): títulos de card, item de FAQ, item de serviço.
-- **Body** (400, 15.5–19px, line-height 1.55–1.6): parágrafos de corpo, geralmente com `max-width` para controlar a medida de linha (ex. 560px, 780px).
-- **Label** (500, 12–13px, letter-spacing 0.1em, uppercase, IBM Plex Mono): eyebrow de seção, legenda de estatística, rótulo de contato (TEL, E-MAIL), texto de placeholder de imagem/depoimento.
+Escala deliberada de 15 papéis, cada um com um valor exato por propriedade — nenhuma faixa, nenhum papel compartilha tamanho com outro fora da própria família.
+
+- **Display** (800, `clamp(36px, 7vw, 60px)`, line-height 1.05, letter-spacing -0.028em): título do hero. O maior gesto tipográfico da página.
+- **Display — Fechamento** (800, `clamp(32px, 5.6vw, 44px)`, line-height 1.08, letter-spacing -0.028em): título do CTA final de contato. Um degrau abaixo do hero — reforça o fechamento sem competir com a abertura.
+- **Headline** (700, `clamp(28px, 5vw, 40px)`, line-height 1.12, letter-spacing -0.025em): título de cada seção (`h2`). Fixo em todas as 10 ocorrências, sem exceção.
+- **Title** (700, 19px, sem tracking): títulos de card de serviço/processo/projeto, título dos cards de objeção, card de destaque de "A solução". A pergunta do accordion de FAQ usa este mesmo tamanho em weight 600 (mais leve, por ser um controle interativo, não um heading estático).
+- **Title — Destaque** (700, 20px): título dos cards de "Áreas de atuação" e o cabeçalho "Solicitar orçamento" do formulário — o único Title acima de 19px, reservado ao IA mais proeminente da página fora dos Headlines.
+- **Body** (400, 16px, line-height 1.5–1.6): parágrafo padrão — a maioria do corpo de texto do site.
+- **Body — Lead** (400, 17px, line-height 1.6): parágrafo de abertura logo abaixo de um Headline (ex. "O problema", "Serviços", "Equipe").
+- **Body — Painel Escuro** (400, 18px, line-height 1.6, `max-width: 640px` para manter a medida ≤75ch): corpo de texto dentro de painéis escuros de maior peso ("A solução", fechamento de contato).
+- **Numeral** (700, 30px, letter-spacing -0.02em, Archivo): os quatro grandes números do hero (+100, 7 anos, 8 áreas, CREA) — o único papel numérico de destaque da página.
+- **Label** (500, 12.5px, letter-spacing 0.1em, uppercase, IBM Plex Mono): eyebrow de seção e badge do hero. Todo Label usa exatamente 0.1em de tracking e 12.5px — nenhuma exceção.
+- **Label — Micro** (500, 11px, letter-spacing 0.1em, uppercase, IBM Plex Mono): rótulos compactos do vocabulário "Quadro de Comando" — "Ativo" nos cards de solução, legenda das placas-mostrador do hero, micro-nota "Prefere não usar o WhatsApp agora?".
+- **Caption Mono — SM** (400, 12px, sem tracking, IBM Plex Mono): legendas de placeholder de foto/depoimento.
+- **Caption Mono** (400, 13px, sem tracking, IBM Plex Mono): números de etapa (01–04), rótulo de contato (TEL, E-MAIL), nota "substituir pelas fotos reais".
+- **Caption Mono — LG** (400, 13.5px, sem tracking, IBM Plex Mono): texto de depoimento placeholder.
+- **Fine Print** (400, 13.5px, IBM Plex Sans): copyright do rodapé e texto de consentimento LGPD do formulário — o menor corpo de texto legível da página, sempre em Sans, nunca Mono.
 
 ### Named Rules
-**The Mono Stamp Rule.** Todo rótulo, legenda técnica ou dado numérico de apoio (eyebrows, estatísticas, "01/02/03/04", placeholders) usa IBM Plex Mono em uppercase — nunca Archivo ou IBM Plex Sans. É a assinatura tipográfica que distingue "dado técnico" de "conteúdo narrativo".
+**The Mono Stamp Rule.** Todo rótulo, legenda técnica ou dado numérico de apoio (eyebrows, estatísticas, "01/02/03/04", placeholders) usa IBM Plex Mono — nunca Archivo ou IBM Plex Sans. Dentro do mono, Label e Label — Micro levam tracking uppercase (0.1em); os três papéis Caption Mono não — é essa diferença de tracking, não de família, que separa "isto é um rótulo" de "isto é uma legenda de apoio".
+
+**The One Size, One Job Rule.** Cada tamanho de fonte pertence a exatamente um papel, documentado como valor exato — nunca uma faixa. Nenhum valor de `font-size` faz dupla função como Title numa seção e Body noutra — quando isso acontecia (17px, 18px e 17.5px serviam Title e Body ao mesmo tempo), o valor foi resolvido para o papel correto em vez de mantido ambíguo. Tamanhos de componente (botões, tags/pílulas, nav, ícone do FAQ) ficam fora desta escala de conteúdo — são documentados na seção Components, não aqui.
 
 ## Layout
 
@@ -228,9 +308,35 @@ A única exceção deliberada é o CTA flutuante do WhatsApp (`box-shadow: 0 8px
 ### Named Rules
 **The Flat-by-Default Rule.** Sombra é a exceção que carrega significado, não um recurso decorativo. Um único elemento por página pode ter sombra — o CTA mais persistente — e ela existe para dizer "isto flutua sobre tudo", não para dar profundidade genérica.
 
+### Motion
+
+O grama de movimento é restrito e funcional — feedback de interação, nunca decoração. Uma família só:
+
+- **Feedback de interação:** hover em CTAs primários (`background` mais escuro + `translateY(-1px)`), CTAs sobre fundo verde-claro (mesmo padrão), cards de área (borda vira verde), links de navegação/contato/rodapé (cor muda) — sempre 150–200ms, sempre `transform`/`color`/`background-color`, nunca propriedades de layout. O glifo "+" do FAQ gira 45° ao abrir (`details[open]`), virando um "×" visual sem precisar animar a altura do `<details>`. `prefers-reduced-motion: reduce` remove o lift dos botões, mantendo a mudança de cor — o feedback continua existindo, só sem movimento espacial.
+
+Todo o valor de `background`/`color`/`border` que muda no hover mora na regra da classe (`.ds-cta-primary`, `.ds-nav-link` etc.), nunca no `style` inline do elemento — um valor inline sempre vence a pseudo-classe `:hover` da mesma propriedade, então duplicar o valor inline anula o hover silenciosamente.
+
+**Entrada de conteúdo:** nenhuma. Uma tentativa de reveal disparado por scroll (`IntersectionObserver`) foi implementada e depois removida por instabilidade — a página carrega com todo o conteúdo visível de imediato, sem coreografia de entrada.
+
+### Named Rules
+**The No Inline Duplicate Rule.** Nenhuma propriedade que uma classe de hover controla (`background`, `color`, `border`) pode também ser fixada no `style` inline do mesmo elemento — o inline sempre vence e o hover para de funcionar silenciosamente, sem erro visível.
+
 ## Shapes
 
-Escala de raio consistente por escopo: pílulas (badges, tags de equipe, indicador "Natal/RN") em `100px` (cápsula completa); botões em `6–7px`; cards e painéis de conteúdo em `9–11px`; painéis grandes de destaque (hero image, seção "A solução") em `10–14px`. Nenhum elemento usa cantos vivos (`0px`) nem raio extremo além da pílula.
+Escala de raio discreta por papel, sem faixas — cada valor abaixo é um token exato, não uma aproximação:
+
+| Token | Valor | Onde aparece |
+|---|---|---|
+| `pill` | `100px` | badges, tags de equipe, indicador "Natal/RN" |
+| `botao` | `7px` | maioria dos botões, ícones de área (34×34px) |
+| `botao-compacto` | `6px` | CTA do header (única exceção — canto mais justo por causa da altura reduzida do header) |
+| `card-painel-escuro` | `9px` | placas-mostrador do hero, cards de destaque de "A solução" |
+| `card` | `10px` | card padrão — placeholders de foto, cards de serviço/processo/projeto, painel de "O problema" |
+| `card-area` | `11px` | cards de "Áreas de atuação" |
+| `painel-formulario` | `12px` | card branco do formulário de contato |
+| `painel` | `14px` | painel escuro de destaque de "A solução" |
+
+Nenhum elemento usa cantos vivos (`0px`) nem raio extremo além da pílula.
 
 Bordas são sempre `1px solid` em tom neutro claro (`#E7E9E5`/`#E1E4DE`) em conteúdo padrão. Dois usos de borda carregam significado adicional: a borda tracejada (`1px dashed #C9CFC7`) marca conteúdo placeholder (fotos e depoimentos ainda não substituídos pelo cliente); a borda lateral/superior de 3px em verde (`border-left: 3px solid #7DC242` no FAQ de objeções, `border-top: 3px solid #7DC242` nas etapas do processo) marca progressão ou resposta a uma objeção.
 
@@ -242,17 +348,17 @@ Bordas são sempre `1px solid` em tom neutro claro (`#E7E9E5`/`#E1E4DE`) em cont
 Botões, cards e inputs devem parecer **confiantes e sólidos**: peso visual claro nos elementos de ação (verde saturado, texto bold, altura mínima de toque generosa), sem tentar parecer leves ou minimalistas a ponto de perder autoridade.
 
 ### Buttons
-- **Shape:** raio de `6–7px` (`{rounded.sm}`), nunca pílula.
+- **Shape:** raio de `7px` (`{rounded.botao}`), nunca pílula. Exceção: o CTA do header usa `6px` (`{rounded.botao-compacto}`).
 - **Primary (sobre fundo claro):** `background: #1D7A38` (Verde Ação Forte — não o Verde Ação puro, ver Colors), texto branco, `font-weight: 600–700`, padding `17px 30px` (CTA principal) ou `12–14px 20–24px` (CTA secundário de header/seção). Altura mínima de toque `44px`.
 - **Primary (sobre fundo escuro):** `background: #7DC242`, texto `#0B3B45` (não branco — o contraste vem do próprio verde escuro sobre verde claro).
-- **Hover:** `#1D7A38` → `#155A29` (escurece); `#7DC242` → `#8FD152` (clareia). A direção do hover é sempre "mais saturado/mais próximo do extremo da paleta", nunca uma transição de matiz.
-- **Ghost/Secondary:** borda `1px solid rgba(255,255,255,0.3)` sobre fundo escuro, texto branco, sem preenchimento; hover apenas intensifica a borda para branco sólido.
+- **Hover:** `#1D7A38` → `#155A29` (escurece); `#7DC242` → `#8FD152` (clareia). A direção do hover é sempre "mais saturado/mais próximo do extremo da paleta", nunca uma transição de matiz. Acompanha um leve `translateY(-1px)` (150ms) — o botão "levanta" no hover e volta ao lugar no `:active` (feedback de pressão sem sombra nova).
+- **Ghost/Secondary:** borda `1px solid rgba(255,255,255,0.3)` sobre fundo escuro, texto branco, sem preenchimento; hover apenas intensifica a borda para branco sólido (150ms), sem lift — a ausência de transform reforça a hierarquia entre CTA primário e secundário.
 
 ### Cards / Containers
-- **Corner Style:** `9–11px`.
+- **Corner Style:** `10px` padrão (`{rounded.card}`); `9px` em cards de destaque sobre painel escuro (`{rounded.card-painel-escuro}`); `11px` nos cards de "Áreas de atuação" (`{rounded.card-area}`).
 - **Background:** branco sobre fundo claro; painel de petróleo escuro para blocos de destaque de solução/contato.
 - **Shadow Strategy:** nenhuma (ver Elevation & Depth).
-- **Border:** `1px solid #E7E9E5` em repouso; cards de "área de atuação" mudam a borda para verde (`#7DC242`) no hover como único feedback interativo.
+- **Border:** `1px solid #E7E9E5` em repouso; cards de "área de atuação" mudam a borda para verde (`#7DC242`) no hover (200ms) como único feedback interativo — sem lift, sem sombra.
 - **Internal Padding:** `24–28px` horizontal, `20–26px` vertical.
 
 ### Inputs / Fields
@@ -273,9 +379,12 @@ Ponto sólido de `6px` (status ativo/ok) ou quadrado de `8px` com raio `2px` (al
 ### Placa-Mostrador (estatísticas do hero)
 Cada estatística do hero (`+100`, `7 anos`, `8 áreas`, `CREA`) vive dentro de uma placa: `border: 1px solid rgba(255,255,255,0.16)`, `border-radius: 9px`, `padding: 16px 18px`, com o LED verde de status no canto superior direito e o rótulo em IBM Plex Mono uppercase (11px) no lugar do texto simples anterior — reforçando a leitura de "mostrador de painel" em vez de "estatística de marketing".
 
+### FAQ Accordion
+- `<details>`/`<summary>` nativo, sem JS. O glifo "+" gira 45° (200ms) ao abrir, virando um "×" visual — a única pista de estado do accordion, sem animar a altura do conteúdo.
+
 ### Navigation
 - Header sticky, fundo branco semitransparente com blur, borda inferior `1px solid #E7E9E5`.
-- Links de nav em `14.5px`, `font-weight: 500`, cor `#3D4A47`, hover para `#2AA24A`.
+- Links de nav em `14.5px`, `font-weight: 500`, cor `#3D4A47`, hover para `#2AA24A` (150ms).
 - CTA de WhatsApp sempre presente no header, com o mesmo tratamento de botão primário sobre fundo claro.
 
 ### Placeholder de Imagem (componente de assinatura)

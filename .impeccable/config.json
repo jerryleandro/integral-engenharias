@@ -29,6 +29,33 @@
         ],
         "createdAt": "2026-08-27T00:04:38.349Z",
         "reason": "Sub-pixel decorative bullet-dot radius (8x8px marker squares in the problem list), not a shape meant to carry a documented radius token"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "14.5px",
+        "files": [
+          "Integral Engenharia - Landing Page.dc.html"
+        ],
+        "createdAt": "2026-08-27T01:13:00.558Z",
+        "reason": "Nav links and header/footer CTA button text size — component chrome, deliberately outside the content typography ramp (DESIGN.md's Typography section governs reading roles; button/nav sizes live in the Components section)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "14px",
+        "files": [
+          "Integral Engenharia - Landing Page.dc.html"
+        ],
+        "createdAt": "2026-08-27T01:13:00.585Z",
+        "reason": "Team specialty tag/pill text size — component chrome documented in Components > Tags/Pills, not part of the content typography ramp"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "22px",
+        "files": [
+          "Integral Engenharia - Landing Page.dc.html"
+        ],
+        "createdAt": "2026-08-27T01:13:00.616Z",
+        "reason": "Decorative FAQ accordion '+' glyph size, not prose content — not part of the typography ramp"
       }
     ]
   }
