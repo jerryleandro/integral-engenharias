@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-27T12:00:00.000Z",
+  "title": "Design System: Integral Engenharia e Soluções Ambientais",
+  "extensions": {
+    "colorMeta": {
+      "petroleo-corporativo": { "role": "primary", "displayName": "Azul-Petróleo Corporativo", "canonical": "#0B3B45", "tonalRamp": ["#051A1F", "#072B33", "#0B3B45", "#124F5C", "#1B6B7A", "#3E8B99", "#7FB4BE", "#C6DDE1"] },
+      "petroleo-profundo": { "role": "primary", "displayName": "Petróleo Profundo", "canonical": "#072B33", "tonalRamp": ["#031215", "#052024", "#072B33", "#0B3B45", "#124F5C", "#3E8B99", "#7FB4BE", "#C6DDE1"] },
+      "verde-licenca": { "role": "secondary", "displayName": "Verde Licença", "canonical": "#7DC242", "tonalRamp": ["#2A4212", "#3F631B", "#568925", "#6BAA33", "#7DC242", "#98D169", "#B8E08A", "#DBF0C3"] },
+      "verde-acao": { "role": "secondary", "displayName": "Verde Ação", "canonical": "#2AA24A", "tonalRamp": ["#0E3A1B", "#155A29", "#1D7A38", "#23883E", "#2AA24A", "#4FBE68", "#8FD152", "#C4E8B8"] },
+      "verde-acao-forte": { "role": "secondary", "displayName": "Verde Ação Forte", "canonical": "#1D7A38", "tonalRamp": ["#0E3A1B", "#155A29", "#1D7A38", "#23883E", "#2AA24A", "#4FBE68", "#8FD152", "#C4E8B8"] },
+      "link-azul": { "role": "tertiary", "displayName": "Azul-Link", "canonical": "#1B6E9B", "tonalRamp": ["#0A2E3F", "#0F4359", "#155976", "#1B6E9B", "#2F8DBE", "#63AAD1", "#9CC8E2", "#D2E7F2"] },
+      "ambar-alerta": { "role": "tertiary", "displayName": "Âmbar Alerta", "canonical": "#B8651A", "tonalRamp": ["#3D2109", "#5C310D", "#7A4111", "#985015", "#B8651A", "#D08A47", "#E3B187", "#F2D8C3"] },
+      "fundo-base": { "role": "neutral", "displayName": "Fundo Base", "canonical": "#FBFBF9" },
+      "texto-base": { "role": "neutral", "displayName": "Texto Base", "canonical": "#16211F" },
+      "fundo-alternado": { "role": "neutral", "displayName": "Fundo Alternado", "canonical": "#F2F4F0" },
+      "borda-clara": { "role": "neutral", "displayName": "Borda Clara", "canonical": "#E7E9E5" },
+      "texto-corpo-claro": { "role": "neutral", "displayName": "Texto de Corpo (claro)", "canonical": "#4A5754" },
+      "texto-muted": { "role": "neutral", "displayName": "Texto Muted", "canonical": "#66756F" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Título do hero e do CTA final de contato." },
+      "headline": { "displayName": "Headline", "purpose": "Título de cada seção (h2)." },
+      "title": { "displayName": "Title", "purpose": "Títulos de card, FAQ e item de serviço." },
+      "body": { "displayName": "Body", "purpose": "Parágrafos de corpo com largura de linha controlada." },
+      "label": { "displayName": "Label / Mono Stamp", "purpose": "Eyebrows, estatísticas, legendas técnicas e placeholders — sempre IBM Plex Mono uppercase." }
+    },
+    "shadows": [
+      { "name": "cta-flutuante", "value": "0 8px 26px rgba(11,59,69,0.28)", "purpose": "Reservada exclusivamente ao CTA flutuante de WhatsApp; único elemento com sombra no sistema." }
+    ],
+    "motion": [
+      { "name": "smooth-scroll", "value": "scroll-behavior: smooth", "purpose": "Rolagem suave para âncoras de navegação (#areas, #servicos, #contato etc.)." },
+      { "name": "hover-color-shift", "value": "transition implícita via style-hover em background/color/border-color", "purpose": "Único tipo de motion do sistema: mudança de cor/borda no hover, sem transform ou escala." }
+    ],
+    "breakpoints": []
+  },
+  "components": [
+    {
+      "name": "Botão Primário (fundo claro)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal sobre fundo branco/claro — ex. 'Falar no WhatsApp' no header.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Falar no WhatsApp</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; min-height: 44px; background: #1D7A38; color: #fff; padding: 12px 20px; border-radius: 6px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: 14.5px; white-space: nowrap; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: #155A29; } .ds-btn-primary:focus-visible { outline: 2px solid #2AA24A; outline-offset: 2px; }"
+    },
+    {
+      "name": "Botão Primário (fundo escuro)",
+      "kind": "button",
+      "refersTo": "button-primary-on-dark",
+      "description": "CTA principal sobre painel de petróleo escuro — ex. hero, seção de contato.",
+      "html": "<div style=\"background:#0B3B45;padding:24px;border-radius:12px;display:inline-block\"><a class=\"ds-btn-primary-dark\" href=\"#\">Quero regularizar meu empreendimento</a></div>",
+      "css": ".ds-btn-primary-dark { display: inline-flex; align-items: center; min-height: 44px; background: #7DC242; color: #0B3B45; padding: 17px 30px; border-radius: 7px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 700; font-size: 16.5px; } .ds-btn-primary-dark:hover, .ds-btn-primary-dark:focus-visible { background: #8FD152; } .ds-btn-primary-dark:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Botão Ghost (fundo escuro)",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "CTA secundário sobre painel escuro — sem preenchimento, borda translúcida.",
+      "html": "<div style=\"background:#0B3B45;padding:24px;border-radius:12px;display:inline-block\"><a class=\"ds-btn-ghost\" href=\"#\">Solicitar orçamento</a></div>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; min-height: 44px; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 17px 28px; border-radius: 7px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: 16.5px; } .ds-btn-ghost:hover, .ds-btn-ghost:focus-visible { border-color: #fff; }"
+    },
+    {
+      "name": "Card de Área de Atuação",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Card branco com ícone tonal, título e descrição; borda vira verde no hover.",
+      "html": "<div class=\"ds-card-area\"><div class=\"ds-card-area-icon\"></div><h3 class=\"ds-card-area-title\">Ambiental</h3><p class=\"ds-card-area-desc\">Licenciamento (LP, LI e LO), estudos ambientais, monitoramento, PGRS, PGRCC, PRAD e atendimento a exigências dos órgãos.</p></div>",
+      "css": ".ds-card-area { background: #fff; border: 1px solid #E7E9E5; border-radius: 11px; padding: 28px 24px 26px; transition: border-color 0.2s; } .ds-card-area:hover, .ds-card-area:focus-within { border-color: #7DC242; } .ds-card-area-icon { width: 34px; height: 34px; border-radius: 7px; background: #EDF7E3; border: 1px solid #D2EBB6; } .ds-card-area-title { font-family: Archivo, sans-serif; font-size: 20px; font-weight: 700; color: #0B3B45; margin: 18px 0 0; } .ds-card-area-desc { font-family: 'IBM Plex Sans', sans-serif; font-size: 15.5px; line-height: 1.55; color: #4A5754; margin: 10px 0 0; }"
+    },
+    {
+      "name": "Tag de Especialidade",
+      "kind": "chip",
+      "refersTo": "tag-pill",
+      "description": "Pílula usada para listar especialidades técnicas da equipe.",
+      "html": "<span class=\"ds-tag-pill\">Eng. Ambiental</span>",
+      "css": ".ds-tag-pill { display: inline-block; border: 1px solid #D5DBD3; border-radius: 100px; padding: 8px 15px; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; color: #3D4A47; background: #fff; }"
+    },
+    {
+      "name": "Campo de Formulário",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Input de texto com label acima, usado no formulário de orçamento.",
+      "html": "<label class=\"ds-field\">Nome<input type=\"text\" class=\"ds-input\" placeholder=\"Seu nome\" /></label>",
+      "css": ".ds-field { display: grid; gap: 6px; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 600; color: #26332F; } .ds-input { border: 1px solid #D5DBD3; border-radius: 7px; padding: 13px 14px; font-size: 15.5px; font-family: 'IBM Plex Sans', sans-serif; color: #16211F; font-weight: 400; min-height: 46px; } .ds-input:focus-visible { outline: 2px solid #2AA24A; outline-offset: 1px; border-color: #2AA24A; }"
+    },
+    {
+      "name": "Item de FAQ (accordion nativo)",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Accordion nativo via <details>/<summary> com indicador '+' verde.",
+      "html": "<details class=\"ds-faq\"><summary class=\"ds-faq-summary\">Quanto tempo leva pra sair a licença?<span class=\"ds-faq-icon\">+</span></summary><p class=\"ds-faq-answer\">Depende do porte, do tipo de atividade e do órgão competente.</p></details>",
+      "css": ".ds-faq { background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 20px 24px; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq-summary { list-style: none; cursor: pointer; font-family: Archivo, sans-serif; font-weight: 600; font-size: 17.5px; color: #0B3B45; display: flex; justify-content: space-between; gap: 16px; align-items: center; } .ds-faq-icon { color: #7DC242; font-size: 22px; line-height: 1; } .ds-faq-answer { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; line-height: 1.6; color: #4A5754; margin: 12px 0 0; }"
+    },
+    {
+      "name": "Placeholder de Imagem",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Componente de assinatura: retângulo com hachura diagonal e legenda mono descrevendo a foto esperada. Nunca substituir por stock photo genérico.",
+      "html": "<div class=\"ds-placeholder\"><span class=\"ds-placeholder-label\">[ foto ] equipe em vistoria técnica<br />de campo — vertical, alta resolução</span></div>",
+      "css": ".ds-placeholder { aspect-ratio: 4/5; border-radius: 10px; border: 1px dashed #C9CFC7; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 20px; } .ds-placeholder-label { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #66756F; line-height: 1.5; }"
+    },
+    {
+      "name": "Eyebrow / Mono Stamp",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Rótulo de seção em IBM Plex Mono uppercase — a assinatura tipográfica técnica do sistema.",
+      "html": "<div class=\"ds-eyebrow\">Áreas de atuação</div>",
+      "css": ".ds-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A; }"
+    },
+    {
+      "name": "Placa-Mostrador (Estatística Hero)",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Estatística do hero tratada como mostrador de painel: borda, LED de status verde no canto, rótulo mono uppercase. Parte do vocabulário 'Quadro de Comando'.",
+      "html": "<div class=\"ds-readout\"><span class=\"ds-readout-led\"></span><div class=\"ds-readout-value\">+100</div><div class=\"ds-readout-label\">empreendimentos licenciados</div></div>",
+      "css": ".ds-readout { position: relative; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; padding: 16px 18px; background: #0B3B45; } .ds-readout-led { position: absolute; top: 14px; right: 14px; width: 6px; height: 6px; border-radius: 50%; background: #7DC242; } .ds-readout-value { font-family: Archivo, sans-serif; font-size: 30px; font-weight: 700; color: #7DC242; letter-spacing: -0.02em; } .ds-readout-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9BFBD; margin-top: 5px; }"
+    },
+    {
+      "name": "LED de Status",
+      "kind": "custom",
+      "refersTo": "led-status",
+      "description": "Indicador achatado sem sombra/glow: verde = ativo/sob controle, âmbar = alerta (exclusivo da seção 'O problema'). Nunca o único portador de significado — sempre acompanha texto.",
+      "html": "<div style=\"display:flex;align-items:center;gap:7px\"><span class=\"ds-led-ativo\"></span><span class=\"ds-led-label\">Ativo</span></div>",
+      "css": ".ds-led-ativo { width: 6px; height: 6px; border-radius: 50%; background: #7DC242; flex-shrink: 0; } .ds-led-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #7DC242; } .ds-led-alerta { width: 8px; height: 8px; border-radius: 2px; background: #B8651A; flex-shrink: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Sala de Engenharia",
+    "overview": "O sistema visual retrata uma sala de engenharia real: uma equipe multidisciplinar (ambiental, civil, sanitarista, florestal, segurança do trabalho, biólogo, geólogo, arquiteto) reunida sob uma identidade única. A base é institucional e técnica — sem enfeite, sem metáforas visuais vagas — mas o verde de destaque injeta energia e direção de ação sobre essa base sóbria. A voz é técnica com energia: confiança que vem da precisão (rótulos monoespaçados, hachura diagonal tipo desenho técnico, números exatos como '+100 empreendimentos' e '7 anos') combinada com CTAs de alta saturação que não deixam dúvida sobre o próximo passo.\n\nA paleta principal opõe um Azul-Petróleo Corporativo (fundo institucional, autoridade) a um Verde Licença (ação, aprovação, 'siga em frente'). Essa dualidade se repete em toda a página: seções escuras (hero, solução, contato) carregam peso institucional; seções claras carregam o corpo técnico do conteúdo; o verde aparece pontualmente nos dois contextos como o sinal de conversão.\n\nO produto é um serviço B2B de licenciamento ambiental e engenharia no Brasil — a confiança técnica é o ativo de conversão, não o apelo emocional. O design nunca compete com essa confiança: não há gradientes decorativos, ilustrações, ou linguagem de urgência artificial.\n\nO sistema estende essa base com um vocabulário de painel de controle industrial ('Quadro de Comando'): LEDs de status pontuam onde o sistema quer dizer 'isto está ativo/sob controle' (estatísticas do hero, cards de solução), e uma luz âmbar de alerta pontua onde o texto descreve risco real (lista 'O problema'). É uma extensão literal do carimbo técnico já existente, não uma identidade nova.",
+    "keyCharacteristics": [
+      "Base institucional (petróleo escuro) + verde de ação como sinal de conversão, nunca decorativo",
+      "Rótulos monoespaçados em uppercase como assinatura técnica (eyebrows, legendas, estatísticas)",
+      "Hachura diagonal sutil (repeating-linear-gradient) simulando textura de desenho técnico nos painéis escuros",
+      "Grids fluidos via auto-fit/minmax, sem breakpoints de media query",
+      "Flat by default: sem sombras, exceto no CTA flutuante do WhatsApp",
+      "Placeholders de imagem e depoimento com borda tracejada + legenda mono explicando o que falta — nunca um vazio silencioso",
+      "Vocabulário 'Quadro de Comando': LEDs verdes (ativo/sob controle) e âmbar (alerta, exclusivo de 'O problema'), sempre achatados e sempre acompanhados de texto"
+    ],
+    "rules": [
+      { "name": "The Signal Green Rule", "body": "Verde nunca é decorativo — ele só aparece em elementos de ação (CTA), aprovação (ícones de check, estatísticas) ou orientação (eyebrow labels). Se remover o verde de um elemento não muda seu significado, ele não deveria estar lá.", "section": "colors" },
+      { "name": "The Petrol Authority Rule", "body": "Seções em Azul-Petróleo marcam os pontos de maior peso institucional da narrativa (abertura, proposta de solução, fechamento com contato) — nunca seções de conteúdo secundário ou intermediário.", "section": "colors" },
+      { "name": "The Mono Stamp Rule", "body": "Todo rótulo, legenda técnica ou dado numérico de apoio (eyebrows, estatísticas, '01/02/03/04', placeholders) usa IBM Plex Mono em uppercase — nunca Archivo ou IBM Plex Sans. É a assinatura tipográfica que distingue 'dado técnico' de 'conteúdo narrativo'.", "section": "typography" },
+      { "name": "The Fluid Grid Rule", "body": "Toda grade de conteúdo usa auto-fit/minmax; nenhuma media query controla o número de colunas. Isso mantém o layout consistente em qualquer largura de viewport sem pontos de quebra abruptos.", "section": "elevation" },
+      { "name": "The Flat-by-Default Rule", "body": "Sombra é a exceção que carrega significado, não um recurso decorativo. Um único elemento por página pode ter sombra — o CTA mais persistente — e ela existe para dizer 'isto flutua sobre tudo', não para dar profundidade genérica.", "section": "elevation" },
+      { "name": "The Dashed Placeholder Rule", "body": "Qualquer conteúdo que o cliente ainda precisa fornecer (fotos reais, depoimentos) usa borda tracejada + legenda em IBM Plex Mono explicando o que deve entrar ali. Nunca deixar um placeholder sem essa legenda — o 'vazio' é sempre rotulado, nunca silencioso.", "section": "elevation" },
+      { "name": "The Amber Alert Rule", "body": "Âmbar é a única cor de alerta do sistema e aparece exclusivamente nos indicadores da seção 'O problema'. Nunca reaproveitar âmbar como acento decorativo, hover ou destaque fora desse contexto de risco.", "section": "colors" }
+    ],
+    "dos": [
+      "Do usar IBM Plex Mono uppercase para todo rótulo técnico, eyebrow e legenda de dado (The Mono Stamp Rule).",
+      "Do manter o verde reservado a ação/aprovação — nunca decorativo (The Signal Green Rule).",
+      "Do manter o sistema flat; a única sombra do site é o CTA flutuante do WhatsApp (The Flat-by-Default Rule).",
+      "Do usar grids auto-fit/minmax para qualquer nova grade de conteúdo, evitando media queries de coluna (The Fluid Grid Rule).",
+      "Do rotular todo placeholder de foto ou depoimento com legenda mono explicando o que falta (The Dashed Placeholder Rule).",
+      "Do usar fotografia real de campo (vistoria, obra, equipe) quando o cliente fornecer — nunca stock photo genérico.",
+      "Do usar Verde Ação Forte (#1D7A38/#155A29 hover), não o Verde Ação puro (#2AA24A), sempre que texto branco for sobreposto ao verde — o tom mais claro não passa no contraste WCAG AA.",
+      "Do manter todo conteúdo de rascunho (depoimentos, fotos sem crédito) desligado por padrão via prop até existir conteúdo real.",
+      "Do manter os LEDs de status achatados, sem sombra ou glow, sempre acompanhados de texto que já carrega o mesmo significado (The Amber Alert Rule)."
+    ],
+    "donts": [
+      "Don't usar Âmbar Alerta (#B8651A) fora da lista 'O problema' — ele não é um acento decorativo genérico.",
+      "Don't introduzir gradientes decorativos, ilustrações ou elementos gráficos fora da hachura técnica já estabelecida.",
+      "Don't usar tom de venda agressiva: sem contadores regressivos, pop-ups de urgência artificial ou linguagem de 'oferta por tempo limitado' — a credibilidade é técnica, não promocional.",
+      "Don't aplicar sombra a cards, botões ou painéis de conteúdo — profundidade vem de cor e contorno, não de box-shadow.",
+      "Don't usar o Azul-Link (#1B6E9B) fora de links de texto corrido; ele nunca substitui o verde em um CTA.",
+      "Don't misturar Archivo ou IBM Plex Sans em rótulos técnicos — esse território pertence exclusivamente a IBM Plex Mono."
+    ]
+  }
+}

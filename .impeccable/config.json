@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "Integral Engenharia - Landing Page.dc.html"
+        ],
+        "createdAt": "2026-08-26T23:49:40.291Z",
+        "reason": "Pre-existing pattern on the client's live site, not AI-generated; documented as an intentional named rule in DESIGN.md (left-border marks objection/response cards in the FAQ objections section)"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "0 8px 26px rgba(11,59,69,0.28)",
+        "files": [
+          "Integral Engenharia - Landing Page.dc.html"
+        ],
+        "createdAt": "2026-08-27T00:04:38.318Z",
+        "reason": "Documented in DESIGN.md as the single deliberate Flat-by-Default exception: brand-navy (#0B3B45) elevation shadow with an 8px offset on the fixed WhatsApp CTA, not a zero-offset neon/glow halo"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "2px",
+        "files": [
+          "Integral Engenharia - Landing Page.dc.html"
+        ],
+        "createdAt": "2026-08-27T00:04:38.349Z",
+        "reason": "Sub-pixel decorative bullet-dot radius (8x8px marker squares in the problem list), not a shape meant to carry a documented radius token"
+      }
+    ]
+  }
+}

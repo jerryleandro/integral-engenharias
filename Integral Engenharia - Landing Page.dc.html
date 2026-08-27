@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -16,8 +16,28 @@
   * { box-sizing: border-box; }
   a { color: #1B6E9B; text-decoration: none; }
   a:hover { color: #2AA24A; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #2AA24A; outline-offset: 2px; }
   summary::-webkit-details-marker { display: none; }
   html { scroll-behavior: smooth; }
+
+  .ds-nav-toggle { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+  .ds-nav-toggle-label { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 6px; cursor: pointer; flex-shrink: 0; }
+  .ds-nav-toggle-label:hover { background: rgba(11,59,69,0.06); }
+  .ds-nav-toggle:focus-visible ~ .ds-nav-toggle-label { outline: 2px solid #2AA24A; outline-offset: 2px; }
+  @media (max-width: 880px) {
+    .ds-header-inner { justify-content: space-between; }
+    .ds-nav-toggle-label { display: flex; }
+    .ds-nav { display: none !important; position: absolute; top: 100%; left: 0; right: 0; margin-left: 0 !important; flex-direction: column !important; align-items: stretch !important; gap: 0 !important; background: #fff; border-bottom: 1px solid #E7E9E5; padding: 8px 24px 16px; }
+    .ds-nav a { min-height: 44px; padding: 10px 4px; width: 100%; box-sizing: border-box; }
+    .ds-nav-toggle:checked ~ .ds-nav { display: flex !important; }
+  }
+  @media (max-width: 760px) {
+    .ds-services-sticky { position: static !important; top: auto !important; }
+  }
+  @media (max-width: 480px) {
+    .ds-team-grid { grid-template-columns: 1fr !important; }
+    .ds-team-grid > div:nth-child(2) { margin-top: 0 !important; }
+  }
 </style>
 </helmet>
 
@@ -25,26 +45,31 @@
 
 <div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #16211F; background: #FBFBF9; overflow-x: hidden">
 
-  <header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); borderBottom: 1px solid #E7E9E5">
-    <div style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap">
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid #E7E9E5">
+    <div class="ds-header-inner" style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap">
       <a href="#topo" style="display: flex; align-items: center; gap: 10px; flex-shrink: 0">
         <img src="assets/mark.png" alt="Integral" style="height: 40px; width: auto; display: block" />
         <img src="assets/wordmark.png" alt="Integral Engenharia e Soluções Ambientais" style="height: 30px; width: auto; display: block" />
       </a>
-      <nav style="display: flex; flex-wrap: wrap; gap: 20px; margin-left: auto; font-size: 14.5px; font-weight: 500; color: #3D4A47">
+      <input type="checkbox" id="nav-toggle" class="ds-nav-toggle" />
+      <nav class="ds-nav" style="display: flex; flex-wrap: wrap; gap: 20px; margin-left: auto; font-size: 14.5px; font-weight: 500; color: #3D4A47">
         <a href="#areas" style="color: #3D4A47" style-hover="color: #2AA24A">Áreas de atuação</a>
         <a href="#servicos" style="color: #3D4A47" style-hover="color: #2AA24A">Serviços</a>
         <a href="#processo" style="color: #3D4A47" style-hover="color: #2AA24A">Como funciona</a>
         <a href="#equipe" style="color: #3D4A47" style-hover="color: #2AA24A">Equipe</a>
         <a href="#contato" style="color: #3D4A47" style-hover="color: #2AA24A">Contato</a>
       </nav>
-      <a href="https://wa.me/5584999007976" target="_blank" rel="noopener" style="background: #2AA24A; color: #fff; padding: 12px 20px; border-radius: 6px; font-weight: 600; font-size: 14.5px; white-space: nowrap; min-height: 44px; display: flex; align-items: center" style-hover="background: #23883E; color: #fff">Falar no WhatsApp</a>
+      <a href="https://wa.me/5584999007976" target="_blank" rel="noopener" style="background: #1D7A38; color: #fff; padding: 12px 20px; border-radius: 6px; font-weight: 600; font-size: 14.5px; white-space: nowrap; min-height: 44px; display: flex; align-items: center" style-hover="background: #155A29; color: #fff">Falar no WhatsApp</a>
+      <label for="nav-toggle" class="ds-nav-toggle-label" aria-label="Abrir menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 6H19M3 11H19M3 16H19" stroke="#0B3B45" stroke-width="2" stroke-linecap="round" /></svg>
+      </label>
     </div>
   </header>
 
+  <main>
+
   <section id="topo" style="position: relative; background: #0B3B45; color: #fff; overflow: hidden">
     <div style="position: absolute; inset: 0; background: repeating-linear-gradient(115deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 16px)"></div>
-    <div style="position: absolute; top: -180px; right: -140px; width: 620px; height: 620px; borderRadius: 50%; background: radial-gradient(circle at 35% 35%, rgba(125,194,66,0.28), rgba(27,110,155,0.16) 55%, transparent 72%)"></div>
     <div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 96px 24px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center">
       <div>
         <div style="display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(125,194,66,0.45); background: rgba(125,194,66,0.1); color: #B8E08A; padding: 7px 14px; border-radius: 100px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-family: 'IBM Plex Mono', monospace">
@@ -64,28 +89,32 @@
         <p style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #90A8A6; margin: 16px 0 0">Resposta em até 1 dia útil · Diagnóstico inicial sem custo</p>
       </div>
       <div style="position: relative">
-        <div style="aspect-ratio: 4/5; border-radius: 10px; border: 1px solid rgba(255,255,255,0.16); background: repeating-linear-gradient(135deg, rgba(255,255,255,0.07) 0 8px, rgba(255,255,255,0.02) 8px 18px); display: flex; align-items: flex-end; padding: 20px">
+        <div style="aspect-ratio: 4/5; border-radius: 10px; border: 1px dashed rgba(255,255,255,0.4); background: repeating-linear-gradient(135deg, rgba(255,255,255,0.07) 0 8px, rgba(255,255,255,0.02) 8px 18px); display: flex; align-items: flex-end; padding: 20px">
           <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #A9BFBD; line-height: 1.5">[ foto ] equipe em vistoria técnica<br />de campo — vertical, alta resolução</span>
         </div>
       </div>
     </div>
     <div style="position: relative; border-top: 1px solid rgba(255,255,255,0.11)">
-      <div style="max-width: 1180px; margin: 0 auto; padding: 26px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 28px">
-        <div>
+      <div style="max-width: 1180px; margin: 0 auto; padding: 26px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px">
+        <div style="position: relative; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; padding: 16px 18px">
+          <span style="position: absolute; top: 14px; right: 14px; width: 6px; height: 6px; border-radius: 50%; background: #7DC242"></span>
           <div style="font-family: Archivo, sans-serif; font-size: 30px; font-weight: 700; color: #7DC242; letter-spacing: -0.02em">+100</div>
-          <div style="font-size: 14px; color: #A9BFBD; margin-top: 2px">empreendimentos licenciados</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9BFBD; margin-top: 5px">empreendimentos licenciados</div>
         </div>
-        <div>
+        <div style="position: relative; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; padding: 16px 18px">
+          <span style="position: absolute; top: 14px; right: 14px; width: 6px; height: 6px; border-radius: 50%; background: #7DC242"></span>
           <div style="font-family: Archivo, sans-serif; font-size: 30px; font-weight: 700; color: #7DC242; letter-spacing: -0.02em">7 anos</div>
-          <div style="font-size: 14px; color: #A9BFBD; margin-top: 2px">de atuação no Rio Grande do Norte</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9BFBD; margin-top: 5px">de atuação no Rio Grande do Norte</div>
         </div>
-        <div>
+        <div style="position: relative; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; padding: 16px 18px">
+          <span style="position: absolute; top: 14px; right: 14px; width: 6px; height: 6px; border-radius: 50%; background: #7DC242"></span>
           <div style="font-family: Archivo, sans-serif; font-size: 30px; font-weight: 700; color: #7DC242; letter-spacing: -0.02em">8 áreas</div>
-          <div style="font-size: 14px; color: #A9BFBD; margin-top: 2px">técnicas na mesma equipe</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9BFBD; margin-top: 5px">técnicas na mesma equipe</div>
         </div>
-        <div>
+        <div style="position: relative; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; padding: 16px 18px">
+          <span style="position: absolute; top: 14px; right: 14px; width: 6px; height: 6px; border-radius: 50%; background: #7DC242"></span>
           <div style="font-family: Archivo, sans-serif; font-size: 30px; font-weight: 700; color: #7DC242; letter-spacing: -0.02em">CREA</div>
-          <div style="font-size: 14px; color: #A9BFBD; margin-top: 2px">registro e ART em todos os projetos</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9BFBD; margin-top: 5px">registro e ART em todos os projetos</div>
         </div>
       </div>
     </div>
@@ -100,23 +129,23 @@
       </div>
       <div style="display: grid; gap: 2px; background: #E7E9E5; border: 1px solid #E7E9E5; border-radius: 10px; overflow: hidden">
         <div style="background: #fff; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start">
-          <span style="width: 8px; height: 8px; border-radius: 2px; background: #7DC242; margin-top: 8px; flex-shrink: 0"></span>
+          <span style="width: 8px; height: 8px; border-radius: 2px; background: #B8651A; margin-top: 8px; flex-shrink: 0"></span>
           <p style="margin: 0; font-size: 16.5px; line-height: 1.5; color: #26332F">Você já protocolou o processo e até hoje não sabe em que etapa ele está.</p>
         </div>
         <div style="background: #fff; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start">
-          <span style="width: 8px; height: 8px; border-radius: 2px; background: #7DC242; margin-top: 8px; flex-shrink: 0"></span>
+          <span style="width: 8px; height: 8px; border-radius: 2px; background: #B8651A; margin-top: 8px; flex-shrink: 0"></span>
           <p style="margin: 0; font-size: 16.5px; line-height: 1.5; color: #26332F">Recebeu uma exigência técnica do órgão e ninguém soube responder no prazo.</p>
         </div>
         <div style="background: #fff; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start">
-          <span style="width: 8px; height: 8px; border-radius: 2px; background: #7DC242; margin-top: 8px; flex-shrink: 0"></span>
+          <span style="width: 8px; height: 8px; border-radius: 2px; background: #B8651A; margin-top: 8px; flex-shrink: 0"></span>
           <p style="margin: 0; font-size: 16.5px; line-height: 1.5; color: #26332F">Precisou de cinco profissionais diferentes — e cada um culpou o outro pelo atraso.</p>
         </div>
         <div style="background: #fff; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start">
-          <span style="width: 8px; height: 8px; border-radius: 2px; background: #7DC242; margin-top: 8px; flex-shrink: 0"></span>
+          <span style="width: 8px; height: 8px; border-radius: 2px; background: #B8651A; margin-top: 8px; flex-shrink: 0"></span>
           <p style="margin: 0; font-size: 16.5px; line-height: 1.5; color: #26332F">A licença venceu sem aviso e a operação ficou irregular da noite pro dia.</p>
         </div>
         <div style="background: #fff; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start">
-          <span style="width: 8px; height: 8px; border-radius: 2px; background: #7DC242; margin-top: 8px; flex-shrink: 0"></span>
+          <span style="width: 8px; height: 8px; border-radius: 2px; background: #B8651A; margin-top: 8px; flex-shrink: 0"></span>
           <p style="margin: 0; font-size: 16.5px; line-height: 1.5; color: #26332F">A obra está pronta e o bombeiro não libera o AVCB por causa do projeto.</p>
         </div>
       </div>
@@ -134,14 +163,26 @@
       </div>
       <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin-top: 42px">
         <div style="border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; padding: 22px">
+          <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 11px">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #7DC242; flex-shrink: 0"></span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #7DC242">Ativo</span>
+          </div>
           <div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 17px; color: #7DC242">Equipe multidisciplinar</div>
           <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #A9BFBD">Um único contrato cobre todas as frentes técnicas do licenciamento.</p>
         </div>
         <div style="border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; padding: 22px">
+          <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 11px">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #7DC242; flex-shrink: 0"></span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #7DC242">Ativo</span>
+          </div>
           <div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 17px; color: #7DC242">Acompanhamento diário</div>
           <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #A9BFBD">Movimentação do protocolo checada todo dia útil, não uma vez por mês.</p>
         </div>
         <div style="border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; padding: 22px">
+          <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 11px">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #7DC242; flex-shrink: 0"></span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #7DC242">Ativo</span>
+          </div>
           <div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 17px; color: #7DC242">Do início ao fim</div>
           <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #A9BFBD">Da viabilidade à renovação da licença — sem repassar você pra outro fornecedor.</p>
         </div>
@@ -178,11 +219,11 @@
 
   <section id="servicos" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 0">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start">
-      <div style="position: sticky; top: 110px">
+      <div class="ds-services-sticky" style="position: sticky; top: 110px">
         <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A">Serviços</div>
         <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 0; color: #0B3B45; text-wrap: balance">O que a Integral entrega na prática.</h2>
         <p style="font-size: 17px; line-height: 1.6; color: #4A5754; margin: 20px 0 0">Não é só o documento assinado — é o resultado que ele destrava no seu empreendimento.</p>
-        <a href="https://wa.me/5584999007976" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; margin-top: 24px; background: #2AA24A; color: #fff; padding: 14px 24px; border-radius: 7px; font-weight: 600; font-size: 15.5px" style-hover="background: #23883E; color: #fff">Tirar dúvida sobre o meu caso</a>
+        <a href="https://wa.me/5584999007976" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; margin-top: 24px; background: #1D7A38; color: #fff; padding: 14px 24px; border-radius: 7px; font-weight: 600; font-size: 15.5px" style-hover="background: #155A29; color: #fff">Tirar dúvida sobre o meu caso</a>
       </div>
       <div style="display: grid; gap: 14px">
         <div style="background: #fff; border: 1px solid #E7E9E5; border-radius: 10px; padding: 24px 26px">
@@ -252,21 +293,21 @@
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 34px">
       <div>
-        <div style="aspect-ratio: 4/3; border-radius: 10px; border: 1px solid #E1E4DE; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
+        <div style="aspect-ratio: 4/3; border-radius: 10px; border: 1px dashed #C9CFC7; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
           <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #66756F">[ foto ] loteamento licenciado</span>
         </div>
         <h3 style="font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; color: #0B3B45; margin: 14px 0 0">Loteamentos e condomínios</h3>
         <p style="font-size: 15.5px; line-height: 1.5; color: #4A5754; margin: 6px 0 0">Licenciamento, drenagem, água e esgoto do parcelamento à entrega.</p>
       </div>
       <div>
-        <div style="aspect-ratio: 4/3; border-radius: 10px; border: 1px solid #E1E4DE; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
+        <div style="aspect-ratio: 4/3; border-radius: 10px; border: 1px dashed #C9CFC7; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
           <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #66756F">[ foto ] planta industrial</span>
         </div>
         <h3 style="font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; color: #0B3B45; margin: 14px 0 0">Indústria e comércio</h3>
         <p style="font-size: 15.5px; line-height: 1.5; color: #4A5754; margin: 6px 0 0">Regularização, efluentes industriais, PGRS e renovação de licenças.</p>
       </div>
       <div>
-        <div style="aspect-ratio: 4/3; border-radius: 10px; border: 1px solid #E1E4DE; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
+        <div style="aspect-ratio: 4/3; border-radius: 10px; border: 1px dashed #C9CFC7; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
           <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #66756F">[ foto ] pousada / hotelaria</span>
         </div>
         <h3 style="font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; color: #0B3B45; margin: 14px 0 0">Hotelaria e pousadas</h3>
@@ -292,18 +333,20 @@
           <span style="border: 1px solid #D5DBD3; border-radius: 100px; padding: 8px 15px; font-size: 14px; color: #3D4A47; background: #fff">Arquiteto</span>
         </div>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
-        <div style="aspect-ratio: 3/4; border-radius: 10px; border: 1px solid #E1E4DE; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
+      <sc-if value="{{ mostrarFotosEquipe }}" hint-placeholder-val="{{ false }}">
+      <div class="ds-team-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+        <div style="aspect-ratio: 3/4; border-radius: 10px; border: 1px dashed #C9CFC7; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px">
           <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #66756F; line-height: 1.5">[ foto ] responsável técnico<br />nome + formação + CREA</span>
         </div>
-        <div style="aspect-ratio: 3/4; border-radius: 10px; border: 1px solid #E1E4DE; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px; margin-top: 32px">
+        <div style="aspect-ratio: 3/4; border-radius: 10px; border: 1px dashed #C9CFC7; background: repeating-linear-gradient(135deg, #EFF1EC 0 8px, #F7F8F4 8px 18px); display: flex; align-items: flex-end; padding: 16px; margin-top: 32px">
           <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #66756F; line-height: 1.5">[ foto ] responsável técnico<br />nome + formação + CREA</span>
         </div>
       </div>
+      </sc-if>
     </div>
   </section>
 
-  <sc-if value="{{ mostrarDepoimentos }}" hint-placeholder-val="{{ true }}">
+  <sc-if value="{{ mostrarDepoimentos }}" hint-placeholder-val="{{ false }}">
     <section style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 0">
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A">Clientes</div>
       <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 0; color: #0B3B45; max-width: 620px; text-wrap: balance">O que dizem os empreendedores atendidos.</h2>
@@ -415,6 +458,7 @@
       </div>
       <sc-if value="{{ mostrarFormulario }}" hint-placeholder-val="{{ true }}">
         <div style="background: #fff; border-radius: 12px; padding: 34px">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #66756F; margin: 0 0 10px">Prefere não usar o WhatsApp agora?</div>
           <h3 style="font-family: Archivo, sans-serif; font-size: 24px; font-weight: 700; color: #0B3B45; margin: 0; letter-spacing: -0.02em">Solicitar orçamento</h3>
           <p style="font-size: 15px; color: #4A5754; margin: 8px 0 0">Preencha e a gente retorna em até 1 dia útil.</p>
           <div style="display: grid; gap: 14px; margin-top: 22px">
@@ -440,37 +484,40 @@
             </label>
             <label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: #4A5754; line-height: 1.5">
               <input type="checkbox" style="margin-top: 3px; width: 17px; height: 17px; accent-color: #2AA24A; flex-shrink: 0" />
-              <span>Autorizo o contato e o tratamento dos meus dados conforme a <a href="#" style="color: #1B6E9B; text-decoration: underline">Política de Privacidade</a> e a LGPD.</span>
+              <span>Autorizo o contato e o tratamento dos meus dados conforme a <span style="color: #1B6E9B; text-decoration: underline">Política de Privacidade (em breve)</span> e a LGPD.</span>
             </label>
-            <button type="button" style="background: #2AA24A; color: #fff; border: none; border-radius: 7px; padding: 16px; font-size: 16.5px; font-weight: 700; font-family: Archivo, sans-serif; cursor: pointer; min-height: 48px" style-hover="background: #23883E">Solicitar meu orçamento</button>
+            <button type="button" style="background: #1D7A38; color: #fff; border: none; border-radius: 7px; padding: 16px; font-size: 16.5px; font-weight: 700; font-family: Archivo, sans-serif; cursor: pointer; min-height: 48px" style-hover="background: #155A29">Solicitar meu orçamento</button>
           </div>
         </div>
       </sc-if>
     </div>
   </section>
 
+  </main>
+
   <footer style="background: #072B33; color: #8FA5A3; padding: 44px 24px 96px">
     <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between">
       <img src="assets/wordmark-white.png" alt="Integral Engenharia e Soluções Ambientais" style="height: 40px; width: auto; opacity: 0.9" />
       <div style="display: flex; gap: 22px; font-size: 14.5px">
-        <a href="#" style="color: #8FA5A3" style-hover="color: #7DC242">Instagram</a>
-        <a href="#" style="color: #8FA5A3" style-hover="color: #7DC242">LinkedIn</a>
+        <span style="color: #8FA5A3">Instagram (em breve)</span>
+        <span style="color: #8FA5A3">LinkedIn (em breve)</span>
         <a href="#contato" style="color: #8FA5A3" style-hover="color: #7DC242">Contato</a>
       </div>
       <div style="font-size: 13.5px; color: #6B807E">© 2026 Integral Engenharia e Soluções Ambientais · Natal/RN</div>
     </div>
   </footer>
 
-  <a href="https://wa.me/5584999007976" target="_blank" rel="noopener" style="position: fixed; right: 22px; bottom: 22px; z-index: 60; background: #2AA24A; color: #fff; border-radius: 100px; padding: 15px 24px; font-weight: 700; font-size: 15.5px; box-shadow: 0 8px 26px rgba(11,59,69,0.28); min-height: 44px; display: flex; align-items: center" style-hover="background: #23883E; color: #fff">WhatsApp</a>
+  <a href="https://wa.me/5584999007976" target="_blank" rel="noopener" style="position: fixed; right: calc(22px + env(safe-area-inset-right)); bottom: calc(22px + env(safe-area-inset-bottom)); z-index: 60; background: #1D7A38; color: #fff; border-radius: 100px; padding: 15px 24px; font-weight: 700; font-size: 15.5px; box-shadow: 0 8px 26px rgba(11,59,69,0.28); min-height: 44px; display: flex; align-items: center" style-hover="background: #155A29; color: #fff">WhatsApp</a>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;mostrarDepoimentos&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;},&quot;mostrarFormulario&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;mostrarDepoimentos&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;},&quot;mostrarFormulario&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;},&quot;mostrarFotosEquipe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     return {
-      mostrarDepoimentos: this.props.mostrarDepoimentos ?? true,
+      mostrarDepoimentos: this.props.mostrarDepoimentos ?? false,
       mostrarFormulario: this.props.mostrarFormulario ?? true,
+      mostrarFotosEquipe: this.props.mostrarFotosEquipe ?? false,
     };
   }
 }
