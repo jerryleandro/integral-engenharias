@@ -320,10 +320,12 @@ Todo o valor de `background`/`color`/`border` que muda no hover mora na regra da
 
 **A Prancha Viva (momento de entrada do hero).** O mockup principal do hero (coluna direita da seção `#topo`) não é mais um placeholder inerte: ao carregar, uma folha de levantamento planialtimétrico **se desenha sozinha** numa cascata única de ~2s e depois congela. Sequência: grade de blueprint (fade) → moldura da prancha (`stroke-dashoffset`) → polígono do lote levantado lado a lado → o lado de fechamento fechando em Verde Licença (`#7DC242`) — a batida narrativa "o terreno se regulariza" → cruzetas de vértice, área de intervenção hachurada, linha de cota, seta norte e carimbo mono → power-on escalonado dos 4 LEDs das placas-mostrador (só `opacity` 0.28→1, sem glow, mantendo a regra do LED). É SVG/CSS puro, **sem JavaScript**; anima apenas `opacity` e `stroke-dashoffset` em paths com `pathLength="1"`. Roda **uma única vez** (`animation-iteration-count: 1`, `forwards`), não em loop nem por scroll. `prefers-reduced-motion: reduce` zera todas as animações (`animation: none`) e entrega a planta 100% desenhada e os LEDs cheios no primeiro frame. Não introduz layout shift — a camada é `position: absolute; inset: 0; pointer-events: none`, fora do fluxo.
 
+**Carrosséis temáticos de projetos.** A seção `#projetos` organiza os registros reais em quatro frentes — Construção Civil, Indústria, Monitoramento Ambiental e Topografia — com troca sincronizada por fade de opacidade a cada 2 segundos. A rotação só ocorre quando cada carrossel está visível e a aba está ativa; o controle “Pausar” interrompe localmente. `prefers-reduced-motion: reduce` mantém a primeira imagem estática e oculta o controle de autoplay. Cada foto aparece em apenas um tema; os arquivos originais em `assets/projetos/` são usados sem gerar derivadas ou recompressão.
+
 ### Named Rules
 **The No Inline Duplicate Rule.** Nenhuma propriedade que uma classe de hover controla (`background`, `color`, `border`) pode também ser fixada no `style` inline do mesmo elemento — o inline sempre vence e o hover para de funcionar silenciosamente, sem erro visível.
 
-**The Single Entrance Rule.** "A Prancha Viva" é a única coreografia de entrada da página e vive exclusivamente no hero. Uma batida, disparada no load, executada uma vez. Não replicar entrada em outras seções, não converter em reveal por scroll, não colocar em loop. Qualquer movimento fora dela permanece feedback de interação (hover/`:active`), nunca decoração.
+**The Single Entrance Rule.** "A Prancha Viva" é a única coreografia de entrada da página e vive exclusivamente no hero. Uma batida, disparada no load, executada uma vez. Não replicar entrada em outras seções nem converter em reveal por scroll. Fora dela, movimento permanece feedback de interação, exceto pela rotação explícita de conteúdo nos carrosséis de projetos, limitada a fade, visibilidade e controles de pausa.
 
 ## Shapes
 
@@ -389,6 +391,7 @@ Cada estatística do hero (`+400`, `7 anos`, `8 áreas`, `CREA`) vive dentro de 
 ### Navigation
 - Header sticky, fundo branco semitransparente com blur, borda inferior `1px solid #E7E9E5`.
 - Links de nav em `14.5px`, `font-weight: 500`, cor `#3D4A47`, hover para `#2AA24A` (150ms).
+- Acesso ao Instagram sempre visível no header como controle quadrado de `44×44px`, com glifo SVG oficial em petróleo e inversão para fundo petróleo no hover/foco; o mesmo perfil reaparece identificado por ícone e texto no rodapé.
 - CTA de WhatsApp sempre presente no header, com o mesmo tratamento de botão primário sobre fundo claro.
 
 ### Placeholder de Imagem (componente de assinatura)

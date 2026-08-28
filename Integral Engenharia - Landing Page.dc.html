@@ -35,9 +35,16 @@
   html { scroll-behavior: smooth; }
 
   .ds-nav-toggle { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+  .ds-header-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
   .ds-nav-toggle-label { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 6px; cursor: pointer; flex-shrink: 0; transition: background-color 150ms ease; }
   .ds-nav-toggle-label:hover { background: rgba(11,59,69,0.06); }
-  .ds-nav-toggle:focus-visible ~ .ds-nav-toggle-label { outline: 2px solid #2AA24A; outline-offset: 2px; }
+  .ds-nav-toggle:focus-visible ~ .ds-header-actions .ds-nav-toggle-label { outline: 2px solid #2AA24A; outline-offset: 2px; }
+  .ds-instagram-header { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid #C9CFC7; border-radius: 8px; background: #fff; color: #0B3B45; transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, transform 150ms cubic-bezier(0.16,1,0.3,1); }
+  .ds-instagram-header:hover, .ds-instagram-header:focus-visible { color: #fff; background: #0B3B45; border-color: #0B3B45; transform: translateY(-1px); }
+  .ds-instagram-header:active { transform: translateY(0); }
+  .ds-instagram-header svg { width: 24px; height: 24px; display: block; }
+  .ds-footer-instagram { display: inline-flex; align-items: center; gap: 8px; }
+  .ds-footer-instagram svg { width: 20px; height: 20px; display: block; flex-shrink: 0; }
   @media (max-width: 880px) {
     .ds-header-inner { justify-content: space-between; }
     .ds-nav-toggle-label { display: flex; }
@@ -48,9 +55,42 @@
   @media (max-width: 760px) {
     .ds-services-sticky { position: static !important; top: auto !important; }
   }
+  @media (max-width: 620px) {
+    .ds-header-inner { flex-wrap: nowrap !important; gap: 8px !important; padding: 12px !important; }
+    .ds-header-actions { gap: 6px; }
+    .ds-header-whatsapp { padding-left: 12px !important; padding-right: 12px !important; }
+    .ds-header-whatsapp-prefix { display: none; }
+  }
+  @media (max-width: 340px) {
+    .ds-brand-wordmark { display: none !important; }
+  }
   @media (max-width: 480px) {
     .ds-team-grid { grid-template-columns: 1fr !important; }
     .ds-team-grid > div:nth-child(2) { margin-top: 0 !important; }
+  }
+
+  /* ---- Projetos: carrosséis temáticos de registros reais ---- */
+  .projects-section { max-width: 1180px; margin: 0 auto; padding: 96px 24px 0; }
+  .projects-header { max-width: 720px; }
+  .projects-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A; }
+  .projects-title { max-width: 620px; margin: 14px 0 0; font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; color: #0B3B45; text-wrap: balance; }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 38px 24px; margin-top: 36px; }
+  .project-card { min-width: 0; }
+  .project-carousel { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid #D5DBD3; border-radius: 10px; background: #E7E9E5; transition: border-color 180ms ease; }
+  .project-card:hover .project-carousel, .project-card:focus-within .project-carousel { border-color: #7DC242; }
+  .project-carousel img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 260ms ease; }
+  .project-carousel img.is-active { opacity: 1; }
+  .project-carousel-toggle { position: absolute; right: 12px; bottom: 12px; z-index: 2; min-height: 44px; padding: 0 14px; border: 1px solid rgba(255,255,255,0.34); border-radius: 6px; background: rgba(7,43,51,0.9); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background-color 150ms ease, border-color 150ms ease; }
+  .project-carousel-toggle:hover { background: #0B3B45; border-color: rgba(255,255,255,0.72); }
+  .project-card-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 16px; }
+  .project-card-title { margin: 0; font-family: Archivo, sans-serif; font-size: 20px; line-height: 1.25; font-weight: 700; color: #0B3B45; }
+  .project-card-count { flex-shrink: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.4; color: #66756F; }
+  .project-card-copy { max-width: 54ch; margin: 8px 0 0; font-size: 16px; line-height: 1.55; color: #4A5754; }
+  @media (max-width: 620px) {
+    .projects-section { padding: 72px 20px 0; }
+    .projects-grid { gap: 32px; margin-top: 30px; }
+    .project-card-heading { display: block; }
+    .project-card-count { display: block; margin-top: 5px; }
   }
 
   /* ---- Equipe: retratos reais e hierarquia editorial ---- */
@@ -131,9 +171,12 @@
 
   @media (prefers-reduced-motion: reduce) {
     .ds-cta-primary:hover, .ds-cta-primary:focus-visible, .ds-cta-primary:active,
-    .ds-cta-on-light-green:hover, .ds-cta-on-light-green:focus-visible, .ds-cta-on-light-green:active {
+    .ds-cta-on-light-green:hover, .ds-cta-on-light-green:focus-visible, .ds-cta-on-light-green:active,
+    .ds-instagram-header:hover, .ds-instagram-header:focus-visible, .ds-instagram-header:active {
       transform: none;
     }
+    .project-carousel img { transition: none; }
+    .project-carousel-toggle { display: none; }
   }
 
   /* ---- A Prancha Viva: momento do hero (o levantamento que se desenha sozinho) ---- */
@@ -166,6 +209,85 @@
     }
   }
 </style>
+<script>
+(function () {
+  var INTERVAL = 2000;
+  var tries = 0;
+  var initialized = false;
+  var motion_query = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function initProjectCarousels() {
+    if (initialized) return;
+    var roots = [].slice.call(document.querySelectorAll('[data-project-carousel]'));
+    if (!roots.length) {
+      if (tries++ < 60) setTimeout(initProjectCarousels, 100);
+      return;
+    }
+
+    initialized = true;
+    var states = roots.map(function (root) {
+      var images = [].slice.call(root.querySelectorAll('img'));
+      var button = root.querySelector('[data-carousel-toggle]');
+      var state = {
+        root: root,
+        images: images,
+        button: button,
+        index: Math.max(0, images.findIndex(function (img) { return img.classList.contains('is-active'); })),
+        visible: !('IntersectionObserver' in window),
+        manuallyPaused: false
+      };
+
+      if (button) {
+        button.addEventListener('click', function () {
+          state.manuallyPaused = !state.manuallyPaused;
+          var carousel_name = root.getAttribute('data-carousel-name') || 'projetos';
+          button.textContent = state.manuallyPaused ? 'Retomar' : 'Pausar';
+          button.setAttribute('aria-label', (state.manuallyPaused ? 'Retomar' : 'Pausar') + ' carrossel de ' + carousel_name);
+        });
+      }
+
+      return state;
+    });
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var state = states.find(function (item) { return item.root === entry.target; });
+          if (state) state.visible = entry.isIntersecting;
+        });
+      }, { threshold: 0.12 });
+      states.forEach(function (state) { observer.observe(state.root); });
+    }
+
+    function advance(state) {
+      if (state.images.length < 2) return;
+      var next_index = state.index;
+      for (var step = 1; step < state.images.length; step++) {
+        var candidate = (state.index + step) % state.images.length;
+        var next_image = state.images[candidate];
+        if (next_image.complete && next_image.naturalWidth > 0) {
+          next_index = candidate;
+          break;
+        }
+      }
+      if (next_index === state.index) return;
+      state.images[state.index].classList.remove('is-active');
+      state.images[next_index].classList.add('is-active');
+      state.index = next_index;
+    }
+
+    setInterval(function () {
+      if (document.hidden || (motion_query && motion_query.matches)) return;
+      states.forEach(function (state) {
+        if (state.visible && !state.manuallyPaused) advance(state);
+      });
+    }, INTERVAL);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initProjectCarousels);
+  else initProjectCarousels();
+})();
+</script>
 </helmet>
 
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0B3B45"/><rect x="30" y="30" width="40" height="40" rx="6" fill="#7DC242"/><rect x="42" y="42" width="16" height="16" rx="3" fill="#0B3B45"/></svg></template>
@@ -176,7 +298,7 @@
     <div class="ds-header-inner" style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap">
       <a href="#topo" style="display: flex; align-items: center; gap: 10px; flex-shrink: 0">
         <img src="assets/mark.png" alt="Integral" style="height: 40px; width: auto; display: block" />
-        <img src="assets/wordmark.png" alt="Integral Engenharia e Soluções Ambientais" style="height: 30px; width: auto; display: block" />
+        <img src="assets/wordmark.png" alt="Integral Engenharia e Soluções Ambientais" class="ds-brand-wordmark" style="height: 30px; width: auto; display: block" />
       </a>
       <input type="checkbox" id="nav-toggle" class="ds-nav-toggle" />
       <nav class="ds-nav" style="display: flex; flex-wrap: wrap; gap: 20px; margin-left: auto; font-size: 14.5px; font-weight: 500; color: #3D4A47">
@@ -186,10 +308,15 @@
         <a href="#equipe" class="ds-nav-link">Equipe</a>
         <a href="#contato" class="ds-nav-link">Contato</a>
       </nav>
-      <a href="https://wa.me/5584999007976" target="_blank" rel="noopener" class="ds-cta-primary" style="color: #fff; padding: 12px 20px; border-radius: 6px; font-weight: 600; font-size: 14.5px; white-space: nowrap; min-height: 44px; display: flex; align-items: center">Falar no WhatsApp</a>
-      <label for="nav-toggle" class="ds-nav-toggle-label" aria-label="Abrir menu">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 6H19M3 11H19M3 16H19" stroke="#0B3B45" stroke-width="2" stroke-linecap="round" /></svg>
-      </label>
+      <div class="ds-header-actions">
+        <a href="https://www.instagram.com/integralengenharias?igsi=MWVuZXR4ZHlzbjQzMg==" target="_blank" rel="noopener" class="ds-instagram-header" aria-label="Instagram da Integral Engenharias — abre em nova aba" title="Instagram da Integral Engenharias">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2" /><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" /><circle cx="17.4" cy="6.7" r="1.15" fill="currentColor" /></svg>
+        </a>
+        <a href="https://wa.me/5584999007976" target="_blank" rel="noopener" class="ds-cta-primary ds-header-whatsapp" style="color: #fff; padding: 12px 20px; border-radius: 6px; font-weight: 600; font-size: 14.5px; white-space: nowrap; min-height: 44px; display: flex; align-items: center"><span class="ds-header-whatsapp-prefix">Falar no&nbsp;</span>WhatsApp</a>
+        <label for="nav-toggle" class="ds-nav-toggle-label" aria-label="Abrir menu">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 6H19M3 11H19M3 16H19" stroke="#0B3B45" stroke-width="2" stroke-linecap="round" /></svg>
+        </label>
+      </div>
     </div>
   </header>
 
@@ -474,35 +601,86 @@
     </div>
   </section>
 
-  <section id="projetos" class="reveal-group" style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 0">
-    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap">
-      <div>
-        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #2AA24A">Projetos</div>
-        <h2 style="font-family: Archivo, sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; margin: 14px 0 0; color: #0B3B45; max-width: 620px; text-wrap: balance">Mais de 400 empreendimentos licenciados.</h2>
-      </div>
+  <section id="projetos" class="projects-section reveal-group" aria-labelledby="projetos-title">
+    <div class="projects-header">
+      <div class="projects-eyebrow">Projetos</div>
+      <h2 id="projetos-title" class="projects-title">Mais de 400 empreendimentos licenciados.</h2>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 36px">
-      <div>
-        <div style="width: 100%; aspect-ratio: 4/3; overflow: hidden; border-radius: 10px">
-          <img src="assets/projetos/loteamentos-condominios.jpg" width="1600" height="1200" alt="Vista aérea de área residencial representando loteamentos e condomínios" loading="lazy" decoding="async" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%" />
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-carousel" data-project-carousel data-carousel-name="Construção Civil" role="group" aria-label="Carrossel de fotos de Construção Civil">
+          <img class="is-active" src="assets/projetos/costrucaoCivil01.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/costrucaoCivil02.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/construcaoCivil%2005.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/construcaoCivil%2006.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/construcaoCivil%2007.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/construcaoCivil%2008.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/construcaoCivil%2009.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/construcaoCivil%2010.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/construcaoCivil%2011.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/construcaoCivil%2012.jpeg" alt="" loading="lazy" decoding="async" />
+          <button type="button" class="project-carousel-toggle" data-carousel-toggle aria-label="Pausar carrossel de Construção Civil">Pausar</button>
         </div>
-        <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 14px 0 0">Loteamentos e condomínios</h3>
-        <p style="font-size: 16px; line-height: 1.5; color: #4A5754; margin: 8px 0 0">Licenciamento, drenagem, água e esgoto do parcelamento à entrega.</p>
-      </div>
-      <div>
-        <div style="width: 100%; aspect-ratio: 4/3; overflow: hidden; border-radius: 10px">
-          <img src="assets/projetos/industria-comercio.jpg" width="1600" height="1200" alt="Instalação industrial representando projetos para indústria e comércio" loading="lazy" decoding="async" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 46%" />
+        <div class="project-card-heading">
+          <h3 class="project-card-title">Construção Civil</h3>
+          <span class="project-card-count">10 fotos</span>
         </div>
-        <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 14px 0 0">Indústria e comércio</h3>
-        <p style="font-size: 16px; line-height: 1.5; color: #4A5754; margin: 8px 0 0">Regularização, efluentes industriais, PGRS e renovação de licenças.</p>
-      </div>
-      <div>
-        <div style="width: 100%; aspect-ratio: 4/3; overflow: hidden; border-radius: 10px">
-          <img src="assets/projetos/hotelaria-pousadas.jpg" width="1600" height="1200" alt="Empreendimento hoteleiro em Natal representando hotelaria e pousadas" loading="lazy" decoding="async" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 48%" />
+        <p class="project-card-copy">Obras, vistorias e acompanhamento técnico de empreendimentos em diferentes etapas.</p>
+      </article>
+
+      <article class="project-card">
+        <div class="project-carousel" data-project-carousel data-carousel-name="Indústria" role="group" aria-label="Carrossel de fotos de Indústria">
+          <img class="is-active" src="assets/projetos/induastria01.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/induastria02.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/induastria03.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/industria04.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/industria05.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/industria06.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/industria07.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/industria08.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/industria09.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/industria10.jpeg" alt="" loading="lazy" decoding="async" />
+          <button type="button" class="project-carousel-toggle" data-carousel-toggle aria-label="Pausar carrossel de Indústria">Pausar</button>
         </div>
-        <h3 style="font-family: Archivo, sans-serif; font-size: 19px; font-weight: 700; color: #0B3B45; margin: 14px 0 0">Hotelaria e pousadas</h3>
-        <p style="font-size: 16px; line-height: 1.5; color: #4A5754; margin: 8px 0 0">Licenciamento em área litorânea, saneamento e projeto de incêndio.</p>
-      </div>
+        <div class="project-card-heading">
+          <h3 class="project-card-title">Indústria</h3>
+          <span class="project-card-count">10 fotos</span>
+        </div>
+        <p class="project-card-copy">Regularização, efluentes industriais, PGRS e renovação de licenças.</p>
+      </article>
+
+      <article class="project-card">
+        <div class="project-carousel" data-project-carousel data-carousel-name="Monitoramento Ambiental" role="group" aria-label="Carrossel de fotos de Monitoramento Ambiental">
+          <img class="is-active" src="assets/projetos/monitoramento01.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/monitoramento02.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/monitoramento03.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/monitoramento04.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/monitoramento05.jpeg" alt="" loading="lazy" decoding="async" />
+          <button type="button" class="project-carousel-toggle" data-carousel-toggle aria-label="Pausar carrossel de Monitoramento Ambiental">Pausar</button>
+        </div>
+        <div class="project-card-heading">
+          <h3 class="project-card-title">Monitoramento Ambiental</h3>
+          <span class="project-card-count">5 fotos</span>
+        </div>
+        <p class="project-card-copy">Coletas, inspeções e acompanhamento de campo para controle e conformidade ambiental.</p>
+      </article>
+
+      <article class="project-card">
+        <div class="project-carousel" data-project-carousel data-carousel-name="Topografia" role="group" aria-label="Carrossel de fotos de Topografia">
+          <img class="is-active" src="assets/projetos/Topografia02.jpeg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/prancha/01-levantamento-gnss.jpg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/prancha/02-receptor-topografico.jpg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/prancha/04-bastao-rtk-campo.jpg" alt="" loading="lazy" decoding="async" />
+          <img src="assets/projetos/prancha/05-vistoria-drone.jpg" alt="" loading="lazy" decoding="async" />
+          <button type="button" class="project-carousel-toggle" data-carousel-toggle aria-label="Pausar carrossel de Topografia">Pausar</button>
+        </div>
+        <div class="project-card-heading">
+          <h3 class="project-card-title">Topografia</h3>
+          <span class="project-card-count">5 fotos</span>
+        </div>
+        <p class="project-card-copy">Levantamentos planialtimétricos, georreferenciamento e apoio técnico com GNSS e drone.</p>
+      </article>
     </div>
   </section>
 
@@ -696,8 +874,8 @@
         <a href="https://wa.me/5584999007976?text=Ol%C3%A1%2C%20quero%20um%20diagn%C3%B3stico%20do%20meu%20empreendimento." target="_blank" rel="noopener" class="ds-cta-on-light-green" style="display: inline-flex; align-items: center; min-height: 44px; margin-top: 28px; color: #0B3B45; padding: 17px 30px; border-radius: 7px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 17px">Falar agora no WhatsApp</a>
         <div style="display: grid; gap: 14px; margin-top: 38px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.13)">
           <div style="display: flex; gap: 12px; font-size: 16px; color: #C6D6D4"><span style="color: #7DC242; font-family: 'IBM Plex Mono', monospace; font-size: 13px; width: 78px; flex-shrink: 0; padding-top: 3px">TEL</span><a href="tel:+5584999007976" class="ds-contact-link">(84) 99900-7976</a></div>
-          <div style="display: flex; gap: 12px; font-size: 16px; color: #C6D6D4"><span style="color: #7DC242; font-family: 'IBM Plex Mono', monospace; font-size: 13px; width: 78px; flex-shrink: 0; padding-top: 3px">E-MAIL</span><a href="mailto:integralsolucoesambientais@gmail.com" class="ds-contact-link" style="word-break: break-all">integralsolucoesambientais@gmail.com</a></div>
-          <div style="display: flex; gap: 12px; font-size: 16px; color: #C6D6D4"><span style="color: #7DC242; font-family: 'IBM Plex Mono', monospace; font-size: 13px; width: 78px; flex-shrink: 0; padding-top: 3px">ENDEREÇO</span><span>Av. Prudente de Morais, 5121 — Lagoa Nova<br />Natal/RN, 59064-625</span></div>
+          <div style="display: flex; gap: 12px; font-size: 16px; color: #C6D6D4"><span style="color: #7DC242; font-family: 'IBM Plex Mono', monospace; font-size: 13px; width: 78px; flex-shrink: 0; padding-top: 3px">E-MAIL</span><a href="mailto:comercial@integralengenharias.com" class="ds-contact-link" style="word-break: break-all">comercial@integralengenharias.com</a></div>
+          <div style="display: flex; gap: 12px; font-size: 16px; color: #C6D6D4"><span style="color: #7DC242; font-family: 'IBM Plex Mono', monospace; font-size: 13px; width: 78px; flex-shrink: 0; padding-top: 3px">ENDEREÇO</span><span>Arena das Dunas (Sala M02)<br />Av. Prudente de Morais, 5121 — Lagoa Nova<br />Natal/RN, 59064-625</span></div>
           <div style="display: flex; gap: 12px; font-size: 16px; color: #C6D6D4"><span style="color: #7DC242; font-family: 'IBM Plex Mono', monospace; font-size: 13px; width: 78px; flex-shrink: 0; padding-top: 3px">HORÁRIO</span><span>Segunda a sexta, das 8h às 17h</span></div>
         </div>
       </div>
@@ -744,7 +922,10 @@
     <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between">
       <img src="assets/wordmark-white.png" alt="Integral Engenharia e Soluções Ambientais" style="height: 40px; width: auto; opacity: 0.9" />
       <div style="display: flex; gap: 22px; font-size: 14.5px">
-        <span style="color: #8FA5A3">Instagram (em breve)</span>
+        <a href="https://www.instagram.com/integralengenharias?igsi=MWVuZXR4ZHlzbjQzMg==" target="_blank" rel="noopener" class="ds-footer-link ds-footer-instagram" aria-label="Instagram da Integral Engenharias — abre em nova aba">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2" /><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" /><circle cx="17.4" cy="6.7" r="1.15" fill="currentColor" /></svg>
+          <span>Instagram</span>
+        </a>
         <span style="color: #8FA5A3">LinkedIn (em breve)</span>
         <a href="#contato" class="ds-footer-link">Contato</a>
       </div>
