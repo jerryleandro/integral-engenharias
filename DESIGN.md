@@ -316,10 +316,14 @@ O grama de movimento é restrito e funcional — feedback de interação, nunca 
 
 Todo o valor de `background`/`color`/`border` que muda no hover mora na regra da classe (`.ds-cta-primary`, `.ds-nav-link` etc.), nunca no `style` inline do elemento — um valor inline sempre vence a pseudo-classe `:hover` da mesma propriedade, então duplicar o valor inline anula o hover silenciosamente.
 
-**Entrada de conteúdo:** nenhuma. Uma tentativa de reveal disparado por scroll (`IntersectionObserver`) foi implementada e depois removida por instabilidade — a página carrega com todo o conteúdo visível de imediato, sem coreografia de entrada.
+**Entrada de conteúdo:** nenhuma, com **uma exceção deliberada** — o momento "A Prancha Viva" no hero. Todo o resto da página carrega com o conteúdo visível de imediato; nenhum reveal por scroll (uma tentativa com `IntersectionObserver` foi implementada e removida por instabilidade).
+
+**A Prancha Viva (momento de entrada do hero).** O mockup principal do hero (coluna direita da seção `#topo`) não é mais um placeholder inerte: ao carregar, uma folha de levantamento planialtimétrico **se desenha sozinha** numa cascata única de ~2s e depois congela. Sequência: grade de blueprint (fade) → moldura da prancha (`stroke-dashoffset`) → polígono do lote levantado lado a lado → o lado de fechamento fechando em Verde Licença (`#7DC242`) — a batida narrativa "o terreno se regulariza" → cruzetas de vértice, área de intervenção hachurada, linha de cota, seta norte e carimbo mono → power-on escalonado dos 4 LEDs das placas-mostrador (só `opacity` 0.28→1, sem glow, mantendo a regra do LED). É SVG/CSS puro, **sem JavaScript**; anima apenas `opacity` e `stroke-dashoffset` em paths com `pathLength="1"`. Roda **uma única vez** (`animation-iteration-count: 1`, `forwards`), não em loop nem por scroll. `prefers-reduced-motion: reduce` zera todas as animações (`animation: none`) e entrega a planta 100% desenhada e os LEDs cheios no primeiro frame. Não introduz layout shift — a camada é `position: absolute; inset: 0; pointer-events: none`, fora do fluxo.
 
 ### Named Rules
 **The No Inline Duplicate Rule.** Nenhuma propriedade que uma classe de hover controla (`background`, `color`, `border`) pode também ser fixada no `style` inline do mesmo elemento — o inline sempre vence e o hover para de funcionar silenciosamente, sem erro visível.
+
+**The Single Entrance Rule.** "A Prancha Viva" é a única coreografia de entrada da página e vive exclusivamente no hero. Uma batida, disparada no load, executada uma vez. Não replicar entrada em outras seções, não converter em reveal por scroll, não colocar em loop. Qualquer movimento fora dela permanece feedback de interação (hover/`:active`), nunca decoração.
 
 ## Shapes
 
