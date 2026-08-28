@@ -138,14 +138,18 @@
 
   /* ---- A Prancha Viva: momento do hero (o levantamento que se desenha sozinho) ---- */
   .bp-stage { position: absolute; inset: 0; border-radius: 10px; overflow: hidden; pointer-events: none; }
-  .bp-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .bp-photo-carousel { position: absolute; inset: 0; z-index: 0; background: #072B33; }
+  .bp-photo-carousel img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; opacity: 0; filter: saturate(0.7) contrast(0.88) brightness(0.76); transition: opacity 700ms ease; }
+  .bp-photo-carousel img.is-active { opacity: 1; }
+  .bp-photo-overlay { position: absolute; inset: 0; z-index: 1; background: repeating-linear-gradient(115deg, rgba(255,255,255,0.028) 0 2px, transparent 2px 16px), rgba(9,43,51,0.68); }
+  .bp-svg { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; display: block; }
   .bp-svg text { font-family: 'IBM Plex Mono', monospace; }
   .bp-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: bpDraw 760ms cubic-bezier(0.22, 1, 0.36, 1) forwards; }
   .bp-fade { opacity: 0; animation: bpFade 480ms ease-out forwards; }
   @keyframes bpDraw { to { stroke-dashoffset: 0; } }
   @keyframes bpFade { to { opacity: 1; } }
-  .bp-grid-fine { opacity: 0; animation: bpFade 640ms ease-out 100ms forwards; }
-  .bp-grid-axis { opacity: 0; animation: bpFade 420ms ease-out 320ms forwards; }
+  .bp-grid-fine { opacity: 0; stroke: rgba(255,255,255,0.1); animation: bpFade 640ms ease-out 100ms forwards; }
+  .bp-grid-axis { opacity: 0; stroke: rgba(255,255,255,0.16); animation: bpFade 420ms ease-out 320ms forwards; }
   .bp-frame { animation-duration: 640ms; animation-delay: 120ms; }
   .bp-bound { animation-duration: 820ms; animation-delay: 520ms; }
   .bp-close { animation-duration: 340ms; animation-delay: 1280ms; }
@@ -153,10 +157,11 @@
   .bp-v1 { animation-delay: 1480ms; } .bp-v2 { animation-delay: 1540ms; } .bp-v3 { animation-delay: 1600ms; } .bp-v4 { animation-delay: 1660ms; } .bp-v5 { animation-delay: 1720ms; }
   .bp-dim { animation-delay: 1620ms; }
   .bp-north { animation-delay: 1680ms; }
-  .bp-title { position: absolute; left: 17px; top: 16px; opacity: 0; animation: bpFade 500ms ease-out 1700ms forwards; }
+  .bp-title { position: absolute; left: 17px; top: 16px; z-index: 3; opacity: 0; animation: bpFade 500ms ease-out 1700ms forwards; }
   .bp-title b { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.82); }
   .bp-title span { display: block; margin-top: 3px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 400; letter-spacing: 0.04em; color: rgba(255,255,255,0.54); }
-  .bp-scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 92px; background: linear-gradient(transparent, rgba(9,43,51,0.6)); border-radius: 0 0 10px 10px; pointer-events: none; }
+  .bp-scrim { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; height: 92px; background: linear-gradient(transparent, rgba(9,43,51,0.6)); border-radius: 0 0 10px 10px; pointer-events: none; }
+  .bp-caption { position: relative; z-index: 4; display: inline-block; max-width: calc(100% - 4px); padding: 6px 9px; border-radius: 6px; background: rgba(7,43,51,0.8); font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.02em; color: rgba(255,255,255,0.85); line-height: 1.45; }
   .bp-led { animation: bpLedOn 240ms ease-out both; }
   .bp-led-1 { animation-delay: 1740ms; } .bp-led-2 { animation-delay: 1820ms; } .bp-led-3 { animation-delay: 1900ms; } .bp-led-4 { animation-delay: 1980ms; }
   @keyframes bpLedOn { from { opacity: 0.28; } to { opacity: 1; } }
@@ -164,8 +169,38 @@
     .bp-draw, .bp-fade, .bp-grid-fine, .bp-grid-axis, .bp-title, .bp-led {
       animation: none !important; opacity: 1 !important; stroke-dashoffset: 0 !important;
     }
+    .bp-photo-carousel img { transition: none !important; }
   }
 </style>
+<script>
+(function () {
+  var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  var REDUCED = !!(mq && mq.matches);
+  var START_DELAY = 2600, INTERVAL = 5500, tries = 0;
+  function init() {
+    var root = document.querySelector('[data-bp-carousel]');
+    if (!root) { if (tries++ < 60) setTimeout(init, 100); return; }
+    var imgs = [].slice.call(root.querySelectorAll('img'));
+    for (var i = 1; i < imgs.length; i++) {
+      var d = imgs[i].getAttribute('data-src');
+      if (d && !imgs[i].getAttribute('src')) imgs[i].setAttribute('src', d);
+    }
+    if (REDUCED || imgs.length < 2) return;
+    var idx = 0, timer = null, armed = false;
+    function tick() {
+      imgs[idx].classList.remove('is-active');
+      idx = (idx + 1) % imgs.length;
+      imgs[idx].classList.add('is-active');
+    }
+    function start() { if (armed && !timer && !document.hidden) timer = setInterval(tick, INTERVAL); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    setTimeout(function () { armed = true; start(); }, START_DELAY);
+    document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 </helmet>
 
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0B3B45"/><rect x="30" y="30" width="40" height="40" rx="6" fill="#7DC242"/><rect x="42" y="42" width="16" height="16" rx="3" fill="#0B3B45"/></svg></template>
@@ -216,8 +251,16 @@
         <p style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #90A8A6; margin: 16px 0 0">Resposta em até 1 dia útil · Diagnóstico inicial sem custo</p>
       </div>
       <div class="reveal" style="position: relative; transition-delay: 180ms">
-        <div style="position: relative; aspect-ratio: 4/5; border-radius: 10px; border: 1px dashed rgba(255,255,255,0.4); background: repeating-linear-gradient(135deg, rgba(255,255,255,0.07) 0 8px, rgba(255,255,255,0.02) 8px 18px); display: flex; align-items: flex-end; padding: 20px; overflow: hidden">
+        <div style="position: relative; aspect-ratio: 4/5; border-radius: 10px; border: 1px dashed rgba(255,255,255,0.4); background: #072B33; display: flex; align-items: flex-end; padding: 20px; overflow: hidden">
           <div class="bp-stage" aria-hidden="true">
+            <div class="bp-photo-carousel" data-bp-carousel>
+              <img class="is-active" src="assets/projetos/prancha/02-receptor-topografico.jpg" alt="" decoding="async" fetchpriority="high" style="object-position: 50% 58%" />
+              <img data-src="assets/projetos/prancha/01-levantamento-gnss.jpg" alt="" decoding="async" style="object-position: 50% 42%" />
+              <img data-src="assets/projetos/prancha/03-monitoramento-agua.jpg" alt="" decoding="async" style="object-position: 45% 50%" />
+              <img data-src="assets/projetos/prancha/04-bastao-rtk-campo.jpg" alt="" decoding="async" style="object-position: 50% 45%" />
+              <img data-src="assets/projetos/prancha/05-vistoria-drone.jpg" alt="" decoding="async" style="object-position: 56% 45%" />
+            </div>
+            <div class="bp-photo-overlay"></div>
             <svg class="bp-svg" viewBox="0 0 320 400" preserveAspectRatio="xMidYMid meet" fill="none">
               <defs>
                 <pattern id="bpHatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
@@ -243,20 +286,20 @@
                 <g class="bp-fade bp-v5"><line x1="71" y1="268" x2="61" y2="268" /><line x1="66" y1="263" x2="66" y2="273" /></g>
               </g>
               <g class="bp-fade bp-dim">
-                <line x1="66" y1="284" x2="262" y2="284" stroke="rgba(255,255,255,0.32)" stroke-width="1" />
-                <line x1="66" y1="280" x2="66" y2="288" stroke="rgba(255,255,255,0.32)" stroke-width="1" />
-                <line x1="262" y1="280" x2="262" y2="288" stroke="rgba(255,255,255,0.32)" stroke-width="1" />
-                <text x="164" y="298" text-anchor="middle" font-size="8.5" letter-spacing="0.5" fill="rgba(255,255,255,0.42)">42,80 m</text>
+                <line x1="66" y1="284" x2="262" y2="284" stroke="rgba(255,255,255,0.44)" stroke-width="1" />
+                <line x1="66" y1="280" x2="66" y2="288" stroke="rgba(255,255,255,0.44)" stroke-width="1" />
+                <line x1="262" y1="280" x2="262" y2="288" stroke="rgba(255,255,255,0.44)" stroke-width="1" />
+                <text x="164" y="298" text-anchor="middle" font-size="8.5" letter-spacing="0.5" fill="rgba(255,255,255,0.58)">42,80 m</text>
               </g>
               <g class="bp-fade bp-north">
-                <path d="M 278 44 L 272 62 L 278 57 L 284 62 Z" fill="rgba(255,255,255,0.58)" />
-                <text x="278" y="38" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.52)">N</text>
+                <path d="M 278 44 L 272 62 L 278 57 L 284 62 Z" fill="rgba(255,255,255,0.66)" />
+                <text x="278" y="38" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.6)">N</text>
               </g>
             </svg>
             <div class="bp-title"><b>Levantamento planialtimétrico</b><span>Integral Eng. · esc 1:500</span></div>
             <div class="bp-scrim"></div>
           </div>
-          <span style="position: relative; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #A9BFBD; line-height: 1.5">[ foto ] equipe em vistoria técnica<br />de campo — vertical, alta resolução</span>
+          <span class="bp-caption">Equipe Integral em levantamento de campo</span>
         </div>
       </div>
     </div>
